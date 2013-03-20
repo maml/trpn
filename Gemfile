@@ -7,6 +7,11 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
