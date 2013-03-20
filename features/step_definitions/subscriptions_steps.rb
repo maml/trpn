@@ -1,4 +1,4 @@
-Given(/^I am on the landing page$/) do
+Given(/^I am on the splash page$/) do
 	visit "/"
 end
 
