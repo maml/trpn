@@ -1,7 +1,7 @@
 Trpn::Application.routes.draw do
   get "splash/index"
 
-  resources :subscriptions
+  resources :subscriptions, :only => [:create]
 
 
   # The priority is based upon order of creation:
