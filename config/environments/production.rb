@@ -53,7 +53,7 @@ Trpn::Application.configure do
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = {
 		:address              => "smtp.mandrillapp.com",
-		:port                 => 25,
+		:port                 => 587,
 		:user_name            => "#{$MANDRILL_USERNAME}",
 		:password             => "#{$MANDRILL_APIKEY}",
 		:authentication       => 'login',
