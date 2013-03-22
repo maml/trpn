@@ -56,7 +56,7 @@ Trpn::Application.configure do
 		:port                 => 587,
 		:domain               => 'trpn.herokuapp.com',
 		:user_name            => 'app13806219@heroku.com',
-		:password             => '$MANDRILL_APIKEY',
+		:password             => "#{$MANDRILL_APIKEY}",
 		:authentication       => 'plain',
 		:enable_starttls_auto => true  }
 
