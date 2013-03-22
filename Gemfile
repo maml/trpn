@@ -18,6 +18,11 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development, :test do
+  gem 'redgreen'
+  gem 'test-unit', '1.2.3'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
