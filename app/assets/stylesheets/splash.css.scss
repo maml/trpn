@@ -10,6 +10,7 @@ body {
 h1 {
 	font-family: Sans-serif;
 	font-size: 60px;
+	margin-bottom: 0;
 }
 
 input {
@@ -39,7 +40,7 @@ a {
 #splash_content {
 	display: block;
 	position: relative;
-	width: 40%;
+	width: 20%;
 	margin: 12% auto 0 auto;
 	padding: 20px;
 }
@@ -57,4 +58,12 @@ a {
 	-moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 10px;
+}
+
+#splash_content p:first {
+	margin-bottom: 30px;
+}
+
+#splash_content * {
+	text-align: center;
 }

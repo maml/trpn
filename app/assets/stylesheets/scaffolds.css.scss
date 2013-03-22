@@ -42,3 +42,7 @@ div {
 #error_explanation {
 	color: red;
 }
+
+#error_explanation p, #error_explanation li {
+	text-align: left;
+}
