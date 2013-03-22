@@ -57,7 +57,7 @@ Trpn::Application.configure do
 		:domain               => 'trpn.herokuapp.com',
 		:user_name            => 'app13806219@heroku.com',
 		:password             => "#{$MANDRILL_APIKEY}",
-		:authentication       => 'plain',
+		:authentication       => :login,
 		:enable_starttls_auto => true  }
 
   # Enable threaded mode
