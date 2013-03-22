@@ -45,7 +45,7 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
 				SubscriptionMailer.launch_notification_email(@subscription).deliver
-				format.html { redirect_to root_path, notice: "Thanks for signing up! We'll let you know when we launch." }
+				format.html { redirect_to root_path, notice: "Thanks for signing up! We'll let you know when the app is available." }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
         format.html { render "splash/index" }
