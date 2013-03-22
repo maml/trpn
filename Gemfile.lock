@@ -58,6 +58,7 @@ GEM
     database_cleaner (0.9.1)
     diff-lcs (1.2.1)
     erubis (2.7.0)
+    excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.4.0)
@@ -75,6 +76,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-api (1.0.19)
+      excon (~> 0.16.0)
+      json (~> 1.7.7)
     mime-types (1.21)
     multi_json (1.7.1)
     nokogiri (1.5.6)
@@ -148,6 +152,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   jquery-rails
+  mandrill-api
   pg
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
