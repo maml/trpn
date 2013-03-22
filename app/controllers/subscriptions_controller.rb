@@ -44,10 +44,10 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to root_path, notice: 'Thanks for signing up!' }
+				format.html { redirect_to root_path, notice: "Thanks for signing up! We'll let you know when we launch." }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
-        format.html { render action: "new" }
+        format.html { render "splash/index" }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }
       end
     end
