@@ -53,12 +53,19 @@ Trpn::Application.configure do
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = {
 		:address              => "smtp.mandrillapp.com",
-		:port                 => 587,
-		:domain               => 'trpn.herokuapp.com',
-		:user_name            => 'app13806219@heroku.com',
+		:port                 => 25,
+		#:domain               => 'trpn.herokuapp.com',
+		:user_name            => "#{$MANDRILL_USERNAME}",
 		:password             => "#{$MANDRILL_APIKEY}",
-		:authentication       => :login,
+		:authentication       => 'login',
 		:enable_starttls_auto => true  }
+
+:address   => "smtp.mandrillapp.com",
+    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => "MANDRILL_USERNAME",
+    :password  => "MANDRILL_PASSWORD", # SMTP password is any valid API key
+    :authentication => 'login' # Mandrill supports 'plain' or 'login'
 
   # Enable threaded mode
   # config.threadsafe!
