@@ -6,14 +6,14 @@ Feature: Splash
 	Scenario: Success
   	Given I am on the splash page
   	And I fill in "subscription_email" with "brian.stolte@gmail.com"
-  	When I press "Notify Me!"
+  	When I press "Notify me when the app is available"
   	Then I should see "Thanks for signing up!"
   
 	Scenario: Failure - email has already subscribed
   	Given I am on the splash page
   	And I fill in "subscription_email" with "brian.stolte@gmail.com"
-  	And I press "Notify Me!"
+  	And I press "Notify me when the app is available"
   	And I fill in "subscription_email" with "brian.stolte@gmail.com"
-  	When I press "Notify Me!"
+  	When I press "Notify me when the app is available"
   	Then I should see "Email has already been taken"
 
