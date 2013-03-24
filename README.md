@@ -1,8 +1,4 @@
 TRPN
 ====
 
-"Take a little trip
-
-Take a little trip
-
-Take a little trip with me . . ."
+Find rides all across the land, from sea to shining sea.
