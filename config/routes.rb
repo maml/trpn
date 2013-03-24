@@ -1,4 +1,7 @@
 Trpn::Application.routes.draw do
+  resources :users
+
+
   get "splash/index"
 
   resources :subscriptions, :only => [:create]

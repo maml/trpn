@@ -3,6 +3,7 @@ Feature: profile
   A visitor
   Should be able to create a profile
 
+	@wip
   Scenario: Success
     Given I am on the create profile page
     And I fill in "name" with "Brian Stolte"  # should we split first and last name?
@@ -14,6 +15,7 @@ Feature: profile
     When I press "Save"
     Then I should see "Profile updated!"
     
+	@wip
   Scenario: Failure - name contains illegal characters
     Given I am on the create profile page
     And I fill in "name" with "!@#$%^&*()-_+[]\{};'""/.,><"  
@@ -25,6 +27,7 @@ Feature: profile
     When I press "Save"
     Then I should see "You must use only letters and numbers for your name."  
     
+	@wip
   Scenario: Failure - photo is not an image
     Given I am on the create profile page
     And I fill in "name" with "Brian Stolte"  
@@ -36,6 +39,7 @@ Feature: profile
     When I press "Save"
     Then I should see "The file you uploaded doesn't appear to be an image."
   
+	@wip
   Scenario: Failure - unable to geocode location
     Given I am on the create profile page
     And I fill in "name" with "Brian Stolte"  
@@ -47,6 +51,7 @@ Feature: profile
     When I press "Save"
     Then I should see "We were unable to determine your location.  Please provide your city and state or ZIP code."
   
+	@wip
   Scenario: Failure - vehicle_make contains illegal characters
     Given I am on the create profile page
     And I fill in "name" with "Brian Stolte"  
@@ -58,6 +63,7 @@ Feature: profile
     When I press "Save"
     Then I should see "You can only use letters and numbers for your vehicle make."
     
+	@wip
   Scenario: Failure - vehicle_year contains illegal characters
 		Given I am on the create profile page
 		And I fill in "name" with "Brian Stolte"  

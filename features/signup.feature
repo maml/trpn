@@ -6,9 +6,9 @@ Feature: Signup
 	Scenario: Success
 		Given I am on the signup page
 		And I fill in "user_email" with "brian.stolte@gmail.com"
-		And I fill in "user_name" with "brian stolte"
-		And I fill in "password" with "password"
-		When I press "Sign up"
+		And I fill in "user_password" with "p@ssw0rd"
+		And I fill in "user_password_confirmation" with "p@ssw0rd"
+		When I press "Create account"
 		Then I should see "Thanks for signing up!"
 
 	@wip
