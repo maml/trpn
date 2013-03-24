@@ -10,7 +10,8 @@ Feature: Signup
 		And I fill in "password" with "password"
 		When I press "Sign up"
 		Then I should see "Thanks for signing up!"
-	
+
+	@wip
 	Scenario: Failure - email address is already in use
 		Given I am on the signup page
 		And I fill in "user_email" with "brian.stolte@gmail.com"
@@ -22,15 +23,17 @@ Feature: Signup
 		And I fill in "password" with "password"
 		When I press "Sign up"
 		Then I should see "That email address is already in use."
-	
-	Scenario: Failure - email address is not an email address
+		
+	@wip
+	Scenario: Failure - invalid email address
 		Given I am on the signup page
-		And I fill in "user_email" with "brian.stolte@gmail"
+		And I fill in "user_email" with "invalid@gmail"
 		And I fill in "user_name" with "brian stolte"
 		And I fill in "password" with "password"
 		When I press "Sign up"
 		Then I should see "That doesn't look like a valid email address."
 	
+	@wip
 	Scenario: Failure - password is not long enough
 		Given I am on the signup page
 		And I fill in "user_email" with "brian.stolte@gmail.com"
