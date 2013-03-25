@@ -31,9 +31,8 @@ class RidesControllerTest < ActionController::TestCase
 
   test "should get edit" do
     get :edit, id: @ride
-		assert assigns(:checked_bool_for_have_a_ride), "@checked_bool_for_have_a_ride has not been assigned"
-		# why does this fail?
-		# assert assigns(:checked_bool_for_need_a_ride), "@checked_bool_for_need_a_ride has not been assigned"
+		assert_not_nil assigns(:checked_bool_for_have_a_ride), "@checked_bool_for_have_a_ride has not been assigned"
+		assert_not_nil assigns(:checked_bool_for_need_a_ride), "@checked_bool_for_need_a_ride has not been assigned"
     assert_response :success
   end
 
