@@ -1,6 +1,7 @@
 Trpn::Application.routes.draw do
-  resources :users
+  resources :rides
 
+  resources :users
 
   get "splash/index"
 

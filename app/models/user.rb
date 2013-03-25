@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
+
+	has_many :rides
 	
 	# format check for email based on http://davidcel.is/blog/2012/09/06/stop-validating-email-addresses-with-regex/
 	validates :email,

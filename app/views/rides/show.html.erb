@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @ride.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ride.description %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @ride.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @ride.longitude %>
+</p>
+
+<p>
+  <b>Request:</b>
+  <%= @ride.request %>
+</p>
+
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>

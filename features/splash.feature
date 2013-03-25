@@ -15,5 +15,5 @@ Feature: Splash
   	And I press "Notify me when the app is available"
   	And I fill in "subscription_email" with "brian.stolte@gmail.com"
   	When I press "Notify me when the app is available"
-  	Then I should see "Email has already been taken"
-
+		Then I should see "Email has already been taken"
+	
