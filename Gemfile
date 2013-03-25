@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'unicorn'
 gem 'mandrill-api'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
