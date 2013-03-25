@@ -19,13 +19,13 @@
     <td><%= ride.latitude %></td>
     <td><%= ride.longitude %></td>
     <td><%= ride.request %></td>
-    <td><%= link_to 'Show', ride %></td>
-    <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-    <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', user_ride_path(@user, ride) %></td>
+		<td><%= link_to 'Edit', edit_user_ride_path(@user, ride) %></td>
+    <td><%= link_to 'Destroy', [@user, ride], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Ride', new_ride_path %>
+<%= link_to 'New Ride', new_user_ride_path %>

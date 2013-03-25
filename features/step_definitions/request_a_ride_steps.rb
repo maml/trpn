@@ -1,5 +1,10 @@
-Given(/^I just want to go somewhere$/) do
-	visit "/rides/new"
+Given(/^I am a user of the app$/) do
+	User.create(email: 'user@example.com', password: 'p@ssw0rd', password_confirmation: 'p@ssw0rd')
+end
+
+And(/^I just want to go somewhere$/) do
+	user_id = User.first.id
+	visit "/users/#{user_id}/rides/new"
 end
 
 Given(/^I don't care when or where I go$/) do
