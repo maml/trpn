@@ -41,12 +41,14 @@ class RidesController < ApplicationController
   # GET /rides/1/edit
   def edit
     @ride = Ride.find(params[:id])
+		@checked_bool_for_need_a_ride = @ride.request == true ? true : false
+		@checked_bool_for_have_a_ride = @ride.request == false ? true : false
   end
 
   # POST /rides
   # POST /rides.json
   def create
-		params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[params[:ride][:request]]
+		set_request_param_from_request_val(params[:ride][:request])
 	
     @ride = Ride.new(params[:ride])
 
@@ -64,7 +66,9 @@ class RidesController < ApplicationController
   # PUT /rides/1
   # PUT /rides/1.json
   def update
-    @ride = Ride.find(params[:id])
+   	set_request_param_from_request_val(params[:ride][:request])
+
+		@ride = Ride.find(params[:id])
 
     respond_to do |format|
       if @ride.update_attributes(params[:ride])
@@ -88,4 +92,10 @@ class RidesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+	private
+
+	def set_request_param_from_request_val(request)
+	  params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[request]
+	end
 end
