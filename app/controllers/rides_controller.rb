@@ -10,7 +10,6 @@ class RidesController < ApplicationController
 	# GET /rides
   # GET /rides.json
   def index
-    # @rides = Ride.all
 		@rides = @user.rides.all
 
     respond_to do |format|
@@ -22,7 +21,6 @@ class RidesController < ApplicationController
   # GET /rides/1
   # GET /rides/1.json
   def show
-    # @ride = Ride.find(params[:id])
 		@ride = @user.rides.find(params[:id])
 
     respond_to do |format|
@@ -34,7 +32,6 @@ class RidesController < ApplicationController
   # GET /rides/new
   # GET /rides/new.json
   def new
-    # @ride = Ride.new
 		@ride = @user.rides.new
 
     respond_to do |format|
@@ -45,7 +42,6 @@ class RidesController < ApplicationController
 
   # GET /rides/1/edit
   def edit
-    # @ride = Ride.find(params[:id])
 		@ride = @user.rides.find(params[:id])
 		
 		@checked_bool_for_need_a_ride = @ride.request == true ? true : false
@@ -57,7 +53,6 @@ class RidesController < ApplicationController
   def create
 		set_request_param_from_request_val(params[:ride][:request])
 	
-    # @ride = Ride.new(params[:ride])
 		@ride = @user.rides.new(params[:ride])
 
     respond_to do |format|
@@ -76,7 +71,6 @@ class RidesController < ApplicationController
   def update
    	set_request_param_from_request_val(params[:ride][:request])
 
-		# @ride = Ride.find(params[:id])
 		@ride = @user.rides.find(params[:id])
 
     respond_to do |format|
@@ -93,7 +87,6 @@ class RidesController < ApplicationController
   # DELETE /rides/1
   # DELETE /rides/1.json
   def destroy
-    # @ride = Ride.find(params[:id])
 		@ride = @user.rides.find(params[:id])
     @ride.destroy
 
