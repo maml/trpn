@@ -20,3 +20,5 @@ module Trpn
     config.assets.version = '1.0'
   end
 end
+
+require "#{Rails.root}/lib/rgeo"
