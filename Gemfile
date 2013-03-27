@@ -7,6 +7,7 @@ gem 'activerecord-postgis-adapter'
 gem 'unicorn'
 gem 'mandrill-api'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'awesome_print'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
