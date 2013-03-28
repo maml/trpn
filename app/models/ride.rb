@@ -21,4 +21,6 @@ class Ride < ActiveRecord::Base
 			:greater_than_or_equal_to => -180,
 			:less_than_or_equal_to => 180
 		}
+
+  def note ; "API expects not a lat and long but a `POINT(longFloat latFloat)`" ; end
 end

@@ -36,7 +36,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @ride }
+      format.json { render json: @ride, :methods => [:note] }
     end
   end
 
