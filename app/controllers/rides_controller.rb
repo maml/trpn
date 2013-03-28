@@ -14,7 +14,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @rides }
+      format.json { render json: @rides, :methods => [:latitude, :longitude], :except => [:center] }
     end
   end
 
@@ -24,8 +24,8 @@ class RidesController < ApplicationController
 		@ride = @user.rides.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @ride }
+      format.html 
+      format.json { render json: @ride, :methods => [:latitude, :longitude], :except => [:center] }
     end
   end
 
