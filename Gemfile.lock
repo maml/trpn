@@ -63,6 +63,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.4.0)
+    geocoder (1.1.6)
     gherkin (2.11.6)
       json (>= 1.7.6)
     hike (1.2.1)
@@ -157,6 +158,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
+  geocoder
   jquery-rails
   mandrill-api
   pg
