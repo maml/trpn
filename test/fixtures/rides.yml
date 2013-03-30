@@ -3,13 +3,13 @@
 one:
   title: MyString
   description: MyText
-  latitude: 1.5
-  longitude: 1.5
+  latitude: 37.757959 
+  longitude: -122.431641 
   request: false
 
 two:
   title: MyString
   description: MyText
-  latitude: 1.5
-  longitude: 1.5
+  latitude: 37.761725 
+  longitude: -122.431641 
   request: false

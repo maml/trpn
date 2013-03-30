@@ -6,4 +6,9 @@ class RideTest < ActiveSupport::TestCase
 		ride.title = nil
 	 	assert !ride.save, 'Saved a ride without a title'
   end
+
+	test "it shows rides nearby" do
+		ride = rides(:one)
+		assert ride.nearby.includes(rides(:two))
+	end
 end

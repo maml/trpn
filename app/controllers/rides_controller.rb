@@ -25,7 +25,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @ride }
+      format.json { render json: @ride, :methods => :nearby }
     end
   end
 
