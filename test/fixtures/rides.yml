@@ -3,11 +3,13 @@
 one:
   title: MyString
   description: MyText
-  center: SRID=4326;POINT(-122.431641 37.757959)
-  request: true
+  latitude: 1.5
+  longitude: 1.5
+  request: false
 
 two:
   title: MyString
   description: MyText
-  center: SRID=4326;POINT(-122.419710 37.761725) 
+  latitude: 1.5
+  longitude: 1.5
   request: false

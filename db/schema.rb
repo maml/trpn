@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327211458) do
+ActiveRecord::Schema.define(:version => 20130325021850) do
 
   create_table "rides", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
     t.boolean  "request"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-    t.spatial  "center",      :limit => {:srid=>4326, :type=>"point"}
   end
 
   create_table "subscriptions", :force => true do |t|
