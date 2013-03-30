@@ -9,10 +9,6 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
-  gem 'sqlite3'
-end
-
 group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
