@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @users, :except => [:password] }
+      format.json { render json: { users: @users.as_json(root: false) }, :except => [:password] }
     end
   end
 
