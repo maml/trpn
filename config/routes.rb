@@ -3,7 +3,7 @@ Trpn::Application.routes.draw do
 	get "splash/index"
 	root :to => 'splash#index'
   
-	resources :users, :defaults => { :format => 'json' } do
+	resources :users do
   	resources :rides
 	end
 	
