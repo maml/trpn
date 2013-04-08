@@ -6,6 +6,7 @@ gem 'unicorn'
 gem 'mandrill-api'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'geocoder'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
