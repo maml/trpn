@@ -7,6 +7,12 @@ class RidesControllerTest < ActionController::TestCase
 		@user.rides = [@ride]
   end
 
+	test "should get all rides" do
+		get :all
+		assert_response :success
+		assert_not_nil assigns(:rides)
+	end
+
   test "should get index" do
     get :index, user_id: @user.id
     assert_response :success

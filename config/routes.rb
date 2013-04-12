@@ -6,7 +6,9 @@ Trpn::Application.routes.draw do
 	resources :users do
   	resources :rides
 	end
-	
+
+	get "rides/all"
+
 	resources :subscriptions, :only => [:create]
 
 end

@@ -1,11 +1,20 @@
 class RidesController < ApplicationController
 
-	before_filter :load_user
+	before_filter :load_user, :except => :all
 
 	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
 		'need_a_ride' => true,
 		'have_a_ride' => false
 	}
+
+	def all
+		@rides = Ride.all
+
+		respond_to do |format|
+			format.html # all.html.erb
+			format.json { render json: @rides }
+		end
+	end
 
 	# GET /rides
   # GET /rides.json
