@@ -5,15 +5,6 @@ class RidesController < ApplicationController
 		'have_a_ride' => false
 	}
 
-	def all
-		@rides = Ride.all
-
-		respond_to do |format|
-			format.html # all.html.erb
-			format.json { render json: { rides: @rides.as_json(root: false) } }
-		end
-	end
-
 	# GET /rides
   # GET /rides.json
   def index
@@ -22,7 +13,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @rides }
+      format.json { render json: { rides: @rides.as_json(root: false) } }
     end
   end
 
@@ -34,7 +25,7 @@ class RidesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @ride, :methods => :nearby }
+      format.json { render json: { ride: @ride.as_json }, :methods => :nearby }
     end
   end
 
