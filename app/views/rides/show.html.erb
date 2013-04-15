@@ -28,10 +28,10 @@
 <p>Nearby rides</p>
 <ul>
 	<% for ride in @ride.nearby %>
-		<li><%= link_to ride.title, user_ride_path(@user, ride) %> (<%= ride.distance_from([@ride.latitude, @ride.longitude]).round(2) %> miles)</li>
+		<li><%= link_to ride.title, ride_path(ride) %> (<%= ride.distance_from([@ride.latitude, @ride.longitude]).round(2) %> miles)</li>
 	<% end %>
 </ul>
 
 
-<%= link_to 'Edit', edit_user_ride_path(@user, @ride) %> |
-<%= link_to 'Back', user_rides_path(@user) %>
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>

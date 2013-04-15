@@ -1,13 +1,15 @@
 Trpn::Application.routes.draw do
   
 	get "splash/index"
-	root :to => 'splash#index'
+	root :to => "splash#index"
   
 	resources :users do
-  	resources :rides
+  	resources :rides, :controller => 'users/rides'
 	end
 
-	get "rides/all"
+	resources :rides
+
+	get "rides", controller: "rides", action: "all"
 
 	resources :subscriptions, :only => [:create]
 
