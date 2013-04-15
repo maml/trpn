@@ -5,12 +5,6 @@ class RidesControllerTest < ActionController::TestCase
     @ride = rides(:one)
   end
 
-	test "should get all rides" do
-		get :all
-		assert_response :success
-		assert_not_nil assigns(:rides)
-	end
-
 	test "should get index" do
 		get :index
 		assert_response :success
