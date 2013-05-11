@@ -58,7 +58,7 @@ class RidesController < ApplicationController
     respond_to do |format|
       if @ride.save
         format.html { redirect_to @ride, notice: 'Your request for a ride has been submitted. Good luck!' }
-        format.json { render json: @ride, status: :created, location: @ride }
+				format.json { render json: { ride: @ride.as_json }, status: :created, location: @ride }
       else
         format.html { render action: "new" }
         format.json { render json: @ride.errors, status: :unprocessable_entity }
