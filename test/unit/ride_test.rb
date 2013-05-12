@@ -5,4 +5,10 @@ class RideTest < ActiveSupport::TestCase
 		ride = rides(:one)
 		assert ride.nearby.includes(rides(:two))
 	end
+
+	test "it doesn't save a ride without a description" do
+  	ride = rides(:one)
+		ride.description = nil
+	 	assert !ride.save, 'Saved a ride without a description'
+  end
 end
