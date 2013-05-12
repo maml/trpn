@@ -27,10 +27,5 @@ And(/^I enter a description$/) do
 end
 
 When(/^I create a request for a ride$/) do
-	# deprecate / delete title
-	# fill_in 'ride_title', with: 'Need ride to any National Park'
-	# lat / long should just be geocoded in the background, will be stored in db but not initially exposed on UI(s)
-	# fill_in 'Latitude', with: '41.9223'
-	# fill_in 'Longitude', with: '-87.7555'
 	click_on 'Create Ride'
 end
