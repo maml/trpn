@@ -11,4 +11,10 @@ class RideTest < ActiveSupport::TestCase
 		ride.description = nil
 	 	assert !ride.save, 'Saved a ride without a description'
   end
+
+	test "it doesn't save a ride without a from" do
+		ride = rides(:one)
+		ride.from = nil
+		assert !ride.save, 'Saved a ride without a from'
+	end
 end

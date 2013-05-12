@@ -6,6 +6,7 @@ one:
   latitude: 37.757959 
   longitude: -122.431641 
   request: false
+  from: Chicago, IL
 
 two:
   title: MyString
@@ -13,3 +14,4 @@ two:
   latitude: 37.761725 
   longitude: -122.431641 
   request: false
+  from: Chicago, IL

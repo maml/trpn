@@ -18,7 +18,7 @@ class RidesControllerTest < ActionController::TestCase
 
   test "should create ride" do
     assert_difference('Ride.count') do
-      post :create, ride: { description: @ride.description, latitude: @ride.latitude, longitude: @ride.longitude, request: @ride.request, title: @ride.title }
+      post :create, ride: { description: @ride.description, latitude: @ride.latitude, longitude: @ride.longitude, request: @ride.request, title: @ride.title, from: @ride.from }
     end
 
     assert_redirected_to ride_path(assigns(:ride))
