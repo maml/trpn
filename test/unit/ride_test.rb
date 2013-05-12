@@ -3,8 +3,7 @@ require 'test_helper'
 class RideTest < ActiveSupport::TestCase
 	test "it shows rides nearby" do
 		ride = rides(:one)
-		ride.geocode
-		assert ride.nearby.includes(rides(:nearby_one))
+		assert ride.nearby.includes(rides(:two))
 	end
 
 	test "it doesn't save a ride without a description" do
