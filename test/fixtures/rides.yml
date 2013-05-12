@@ -7,6 +7,7 @@ one:
   longitude: -122.431641 
   request: false
   from: Chicago, IL
+  to: St. Louis, MO
 
 two:
   title: MyString
@@ -15,3 +16,4 @@ two:
   longitude: -122.431641 
   request: false
   from: Chicago, IL
+  to: Kansas City, MO
