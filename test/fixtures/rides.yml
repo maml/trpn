@@ -3,7 +3,17 @@
 one:
   description: MyText
   request: false
+  from: Chicago, IL
+  to: St. Louis, MO
+
+nearby_one:
+  description: MyText
+  request: true
+  from: Chicago, IL
+  to: Kansas City, MO
 
 two:
   description: MyText
   request: false
+  from: San Francisco, CA
+  to: Los Angeles, CA
