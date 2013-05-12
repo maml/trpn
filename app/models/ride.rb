@@ -1,5 +1,5 @@
 class Ride < ActiveRecord::Base
-  attr_accessible :description, :latitude, :longitude, :request, :title, :address
+  attr_accessible :description, :latitude, :longitude, :request, :title, :address, :to, :from, :date
 
 	validates :title, :presence => true
 
