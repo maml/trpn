@@ -1,5 +1,5 @@
 class Ride < ActiveRecord::Base
-  attr_accessible :description, :latitude, :longitude, :request, :title, :address, :to, :from, :date
+  attr_accessible :description, :latitude, :longitude, :request, :address, :to, :from, :date
 
 	validates :description, :presence => true
 	validates :from, :presence => true
@@ -10,5 +10,9 @@ class Ride < ActiveRecord::Base
 
 	def nearby(radius = 35)
 		self.nearbys(radius)
+	end
+	
+	def title
+		"#{read_attribute(:from)} to #{read_attribute(:to)}"
 	end
 end
