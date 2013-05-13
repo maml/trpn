@@ -26,8 +26,6 @@ class Users::RidesController < RidesController
 	# POST /users/:id/rides
 	# POST /users/:id/rides.json
 	def create
-		set_request_param_from_request_val(params[:ride][:request])
-
 		@ride = @user.rides.new(params[:ride])
 		
 		respond_to do |format|
@@ -45,8 +43,6 @@ class Users::RidesController < RidesController
 	# PUT /users/:id/rides/1
 	# PUT /users/:idrides/1.json
 	def update
-		set_request_param_from_request_val(params[:ride][:request])
-		
 		@ride = @user.rides.find(params[:id])
 
 		respond_to do |format|
@@ -76,10 +72,6 @@ class Users::RidesController < RidesController
 		if params[:user_id].present?
 			@user = User.find(params[:user_id])
 		end
-	end
-
-	def set_request_param_from_request_val(request)
-		super
 	end
 
 end

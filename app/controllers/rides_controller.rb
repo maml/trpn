@@ -1,5 +1,8 @@
 class RidesController < ApplicationController
-	
+
+	before_filter :distill_params, :only => [:create, :update]
+  before_filter :set_request_param_from_request_val, :only => [:create, :update]
+
 	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
 		'need_a_ride' => true,
 		'have_a_ride' => false
@@ -51,8 +54,6 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
-		set_request_param_from_request_val(params[:ride][:request])
-	
 		@ride = Ride.new(params[:ride])
 
     respond_to do |format|
@@ -69,8 +70,6 @@ class RidesController < ApplicationController
   # PUT /rides/1
   # PUT /rides/1.json
   def update
-   	set_request_param_from_request_val(params[:ride][:request])
-
 		@ride = Ride.find(params[:id])
 
     respond_to do |format|
@@ -98,8 +97,14 @@ class RidesController < ApplicationController
 
 	private
 
-	def set_request_param_from_request_val(request)
-	  params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[request]
+	def set_request_param_from_request_val
+	  params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[params[:ride][:request]]
+	end
+
+	def distill_params
+		["title", "address", "latitude", "longitude"].each do |blacklisted_key|
+			params[:ride].delete_if { |key| key == blacklisted_key }
+		end
 	end
 
 end
