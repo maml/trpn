@@ -18,7 +18,7 @@ class RidesControllerTest < ActionController::TestCase
 
   test "should create ride" do
     assert_difference('Ride.count') do
-      post :create, ride: { description: @ride.description, latitude: @ride.latitude, longitude: @ride.longitude, request: @ride.request, from: @ride.from, to: @ride.to }
+      post :create, ride: { description: @ride.description, request: @ride.request, from: @ride.from, to: @ride.to }
     end
 
     assert_redirected_to ride_path(assigns(:ride))
@@ -37,7 +37,7 @@ class RidesControllerTest < ActionController::TestCase
   end
 
   test "should update ride" do
-    put :update, id: @ride, ride: { description: @ride.description, latitude: @ride.latitude, longitude: @ride.longitude, request: @ride.request }
+    put :update, id: @ride, ride: { description: @ride.description, request: @ride.request }
     assert_redirected_to ride_path(assigns(:ride))
   end
 
