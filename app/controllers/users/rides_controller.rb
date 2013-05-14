@@ -6,7 +6,11 @@ class Users::RidesController < RidesController
 	# GET /users/:id/rides.json
 	def index
 		@rides = @user.rides.all
-		super
+		
+		respond_to do |format|
+			format.html # index.html.erb
+			format.json { render json: { rides: @rides.as_json(root: false) } }
+		end
 	end
 
 	# GET /users/:id/rides/1
@@ -21,6 +25,13 @@ class Users::RidesController < RidesController
 	def new
 		@ride = @user.rides.new
 		super
+	end
+
+	def edit
+		@ride = @user.rides.find(params[:id])
+		
+		@checked_bool_for_need_a_ride = @ride.request == true ? true : false
+		@checked_bool_for_have_a_ride = @ride.request == false ? true : false
 	end
 
 	# POST /users/:id/rides
