@@ -3,11 +3,6 @@ class RidesController < ApplicationController
 	before_filter :distill_params, :only => [:create, :update]
   before_filter :set_request_param_from_request_val, :only => [:create, :update]
 
-	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
-		'need_a_ride' => true,
-		'have_a_ride' => false
-	}
-
 	# GET /rides
   # GET /rides.json
   def index
@@ -96,6 +91,18 @@ class RidesController < ApplicationController
   end
 
 	private
+
+	# Instances of Ride have a boolean attribute, request, that is meant to indicate wether
+	# or not it is a ride being offered (request = false) or a ride being sought (request = true).
+	# On the forms, rides/_form & users/rides/_form, there are two radio buttons for request, one with 
+	# a value of 'need_a_ride' and the other with a value of 'have_a_ride'. These are mapped to true
+	# and false, respectively, in RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS and then set back to a
+	# boolean in set_request_param_from_request_val before creating or updating.
+	
+	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
+		'need_a_ride' => true,
+		'have_a_ride' => false
+	}
 
 	def set_request_param_from_request_val
 	  params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[params[:ride][:request]]
