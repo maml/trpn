@@ -42,8 +42,8 @@ class RidesController < ApplicationController
   def edit
 		@ride = Ride.find(params[:id])
 		
-		@checked_bool_for_need_a_ride = @ride.request == true ? true : false
-		@checked_bool_for_have_a_ride = @ride.request == false ? true : false
+		@looking = @ride.request == true ? true : false
+		@offering = @ride.request == false ? true : false
   end
 
   # POST /rides
@@ -95,13 +95,13 @@ class RidesController < ApplicationController
 	# Instances of Ride have a boolean attribute, request, that is meant to indicate wether
 	# or not it is a ride being offered (request = false) or a ride being sought (request = true).
 	# On the forms, rides/_form & users/rides/_form, there are two radio buttons for request, one with 
-	# a value of 'need_a_ride' and the other with a value of 'have_a_ride'. These are mapped to true
+	# a value of 'looking' and the other with a value of 'offering'. These are mapped to true
 	# and false, respectively, in RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS and then set back to a
 	# boolean in set_request_param_from_request_val before creating or updating.
 	
 	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
-		'need_a_ride' => true,
-		'have_a_ride' => false
+		'looking' => true,
+		'offering' => false
 	}
 
 	def set_request_param_from_request_val

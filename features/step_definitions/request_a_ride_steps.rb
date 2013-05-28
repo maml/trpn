@@ -8,7 +8,7 @@ And(/^I am on the create a ride page$/) do
 end
 
 And(/^I am looking for a ride$/) do
-	choose "ride_request_need_a_ride"
+	choose "ride_request_looking"
 end
 
 And(/^I want to go from "(.*?)" to "(.*?)"$/) do |arg1, arg2|

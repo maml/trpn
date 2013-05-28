@@ -30,8 +30,8 @@ class Users::RidesController < RidesController
 	def edit
 		@ride = @user.rides.find(params[:id])
 		
-		@checked_bool_for_need_a_ride = @ride.request == true ? true : false
-		@checked_bool_for_have_a_ride = @ride.request == false ? true : false
+		@looking = @ride.request == true ? true : false
+		@offering = @ride.request == false ? true : false
 	end
 
 	# POST /users/:id/rides

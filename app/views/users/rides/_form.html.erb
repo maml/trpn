@@ -12,12 +12,12 @@
   <% end %>
 
 	<div class="field">
-		<%= f.radio_button :request, 'need_a_ride', :checked => @checked_bool_for_need_a_ride %>
-	  <%= label_tag :need_a_ride, 'Need a ride' %>
+		<%= f.radio_button :request, 'looking', :checked => @looking %>
+	  <%= label_tag :looking, 'Looking for a ride' %>
   </div>
 	<div class="field">
-		<%= f.radio_button :request, 'have_a_ride', :checked => @checked_bool_for_have_a_ride %>
-	  <%= label_tag :have_a_ride, 'Have a ride' %>
+		<%= f.radio_button :request, 'offering', :checked => @offering %>
+	  <%= label_tag :offering, 'Offering a ride' %>
   </div>
   <div class="field">
     <%= f.label :from %><br />
