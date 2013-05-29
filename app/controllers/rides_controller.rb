@@ -98,10 +98,14 @@ class RidesController < ApplicationController
 	# a value of 'looking' and the other with a value of 'offering'. These are mapped to true
 	# and false, respectively, in RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS and then set back to a
 	# boolean in set_request_param_from_request_val before creating or updating.
+	#
+	# If the param comes in as a boolean, that same boolean is returned.
 	
 	RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS = {
-		'looking' => true,
-		'offering' => false
+		true 				=> true,
+		'looking' 	=> true,
+		false 			=> false,
+		'offering' 	=> false
 	}
 
 	def set_request_param_from_request_val
