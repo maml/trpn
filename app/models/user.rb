@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
 	def clear_password
 		self.password = nil
 	end
+
+	def username
+		read_attribute('email').split("@")[0]
+	end
 end
