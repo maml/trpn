@@ -25,7 +25,7 @@ class Users::RidesController < RidesController
 	def new
 		@ride = @user.rides.new
 		super
-	end
+  end
 
 	def edit
 		@ride = @user.rides.find(params[:id])
@@ -37,7 +37,7 @@ class Users::RidesController < RidesController
 	# POST /users/:id/rides
 	# POST /users/:id/rides.json
 	def create
-		@ride = @user.rides.new(params[:ride])
+		@ride = @user.rides.new(params[:ride], user_id: @user.id)
 		
 		respond_to do |format|
 			if @ride.save
