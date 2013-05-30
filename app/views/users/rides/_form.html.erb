@@ -1,4 +1,4 @@
-<%= form_for @ride, :url => user_rides_path(@user, @ride) do |f| %>
+<%= form_for ([@user, @ride]) do |f| %>
   <% if @ride.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ride.errors.count, "error") %> prohibited this ride from being saved:</h2>
