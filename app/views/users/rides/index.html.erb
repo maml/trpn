@@ -17,7 +17,7 @@
     <td><%= ride.request %></td>
     <td><%= link_to 'Show', user_ride_path(@user, ride) %></td>
 		<td><%= link_to 'Edit', edit_user_ride_path(@user, ride) %></td>
-    <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', [@user, ride], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
