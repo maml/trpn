@@ -4,6 +4,11 @@
 </p>
 
 <p>
+	<b>posted by:</b>
+	<%= @username %>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @ride.description %>
 </p>
@@ -19,3 +24,4 @@
 		<li><%= link_to ride.title, ride_path(ride) %></li>
 	<% end %>
 </ul>
+
