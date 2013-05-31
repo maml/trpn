@@ -26,6 +26,7 @@ class RidesControllerTest < ActionController::TestCase
 
   test "should show ride" do
     get :show, id: @ride
+		assert_not_nil assigns(:username)
     assert_response :success
   end
 

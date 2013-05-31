@@ -8,6 +8,8 @@ one:
   from: Chicago, IL
   to: St. Louis, MO
 
+  user: one 
+
 two:
   description: Heading down to Kansas City for some baseball and bbq 
   latitude: 37.761725 
@@ -15,3 +17,5 @@ two:
   request: false
   from: Chicago, IL
   to: Kansas City, MO
+
+  user: two 
