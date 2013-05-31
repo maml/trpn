@@ -9,13 +9,6 @@ class Users::RidesController < RidesController
 		super
 	end
 
-	# GET /users/:id/rides/new
-	# GET /users/:id/rides/new.json
-	def new
-		@ride = @user.rides.new
-		super
-  end
-
 	def edit
 		@ride = @user.rides.find(params[:id])
 		
