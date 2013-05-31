@@ -1,27 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @ride.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @ride.description %>
-</p>
-
-<p>
-  <b>Request:</b>
-  <%= @ride.request %>
-</p>
-
-<p>Nearby rides</p>
-<ul>
-	<% for ride in @ride.nearby %>
-		<li><%= link_to ride.title, ride_path(ride) %></li>
-	<% end %>
-</ul>
-
+<%= render 'rides/ride' %>
 
 <%= link_to 'Edit', edit_user_ride_path(@user, @ride) %> |
 <%= link_to 'Back', user_rides_path(@user) %>
