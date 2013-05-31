@@ -9,13 +9,6 @@ class Users::RidesController < RidesController
 		super
 	end
 
-	def edit
-		@ride = @user.rides.find(params[:id])
-		
-		@looking = @ride.request == true ? true : false
-		@offering = @ride.request == false ? true : false
-	end
-
 	# POST /users/:id/rides
 	# POST /users/:id/rides.json
 	def create
