@@ -4,6 +4,9 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+<p>
+	<%= link_to 'show rides posted by this user', user_rides_path(@user) %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
