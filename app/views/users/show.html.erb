@@ -5,8 +5,9 @@
   <%= @user.email %>
 	<%= link_to '[edit]', edit_user_path(@user) %>
 </p>
+
 <p>
-	<%= link_to 'show rides posted by this user', user_rides_path(@user) %>
+	<b>Ride count:</b> <%= @user.rides.length %> <%= link_to "[show]", user_rides_path(@user) %>
 </p>
 
 <%= link_to 'Back to all users', users_path %>
