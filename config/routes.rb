@@ -7,7 +7,9 @@ Trpn::Application.routes.draw do
   	resources :rides, :controller => 'users/rides'
 	end
 
-	resources :rides
+	resources :rides do
+		resources :messages, :controller => 'rides/messages'
+	end
 
 	get "rides", controller: "rides", action: "all"
 
