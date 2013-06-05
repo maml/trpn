@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Trpn</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+	<head>
+		<title>Trpn</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
 
-</body>
+	<body>
+		<nav>
+			<ul>
+				<li><%= link_to "Rides", rides_path %></li>
+				<li><%= link_to "Users", users_path %></li>
+				<li><%= link_to "Splash", root_path %></li>
+			</ul>
+		</nav>
+		<%= yield %>
+	</body>
+
 </html>
