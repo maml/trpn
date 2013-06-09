@@ -29,13 +29,8 @@
 			</ul>
 		</nav>
 
-		<% if notice %>
-			<p id="flash_notice"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-    	<p id="flash_alert"><%= alert %></p>
-		<% end %>
-		
+		<%= render "layouts/flash" %>
+	
 		<%= yield %>
 	</body>
 
