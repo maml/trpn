@@ -11,20 +11,24 @@
 	<body>
 		<nav>
 			<ul>
-				<li><%= link_to "Rides", rides_path %></li>
+				<% if current_page?(root_path) || current_page?(rides_path) %>
+					<li>Rides</li>
+				<% else %>
+					<li><%= link_to "Rides", rides_path %></li>
+				<% end %>
 				<li>|</li>
-				<li><%= link_to "Users", users_path %></li>
+				<li><%= link_to_unless_current "Users", users_path %></li>
 				<li>|</li>
 				<li><%= link_to "Splash", root_path %></li>
 				<li>|</li>
 				<% if user_signed_in? %>
-					<li><%= link_to "Edit profile", edit_user_registration_path %></li>
+					<li><%= link_to_unless_current "Edit profile", edit_user_registration_path %></li>
 					<li>|</li>
 					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %>
 				<% else %>
 					<li><%= link_to_unless_current "Sign up", new_user_registration_path %></li>
 					<li>|</li>
-					<li><%= link_to "Login", new_user_session_path %></li>
+					<li><%= link_to_unless_current "Login", new_user_session_path %></li>
 				<% end %>
 			</ul>
 		</nav>
