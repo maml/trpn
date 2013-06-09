@@ -58,6 +58,9 @@ module Trpn
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+		
+		# Do not access the DB or load models when precompiling your assets. (a Rails 3.1+ Heroku concern)
+		config.assets.initialize_on_precompile = false
 
 		config.middleware.use Rack::Cors do
 	    allow do

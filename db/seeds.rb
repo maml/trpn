@@ -6,9 +6,9 @@
 User.delete_all
 Ride.delete_all
 
-@bstolte   = User.create({ email: 'bstolte@example.com', password: 'p@ssw0rd', password_confirmation: 'p@ssw0rd' })
-@keithnorm = User.create({ email: 'keithnorm@example.com', password: 'p@ssw0rd', password_confirmation: 'p@ssw0rd' })
-@mloseke   = User.create({ email: 'mloseke@example.com', password: 'p@ssw0rd', password_confirmation: 'p@ssw0rd' })
+@bstolte   = User.create({ email: 'bstolte@example.com', password: 'p@ssw0rd' })
+@keithnorm = User.create({ email: 'keithnorm@example.com', password: 'p@ssw0rd' })
+@mloseke   = User.create({ email: 'mloseke@example.com', password: 'p@ssw0rd' })
 
 # day abbreviations
 # Wed, Thu, Fri, Sat, Sun, Mon, Tue

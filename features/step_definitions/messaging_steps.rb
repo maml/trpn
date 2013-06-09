@@ -5,6 +5,11 @@ Given(/^I am on a ride page$/) do
 		to: "St. Louis, MO"
 	)
 
+	user = User.create({ email: "foo@example.com", password: "p@ssw0rd" }) 
+
+	ride.user_id = user.id
+	ride.save
+
 	visit "/rides/#{ride.id}"
 end
 
