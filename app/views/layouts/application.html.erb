@@ -19,8 +19,6 @@
 				<li>|</li>
 				<li><%= link_to_unless_current "Users", users_path %></li>
 				<li>|</li>
-				<li><%= link_to "Splash", root_path %></li>
-				<li>|</li>
 				<% if user_signed_in? %>
 					<li><%= link_to_unless_current "Edit profile", edit_user_registration_path %></li>
 					<li>|</li>
