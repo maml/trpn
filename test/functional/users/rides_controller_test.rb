@@ -4,7 +4,7 @@ class Users::RidesControllerTest < ActionController::TestCase
 
 	setup do
 		@ride = rides(:one)
-		@user = users(:one)
+		@user = login_user
 		@user.rides = [@ride]
 	end
 
@@ -15,13 +15,14 @@ class Users::RidesControllerTest < ActionController::TestCase
 	end
 
 	test "should get new" do
+		login_user
 		get :new, user_id: @user.id
 		assert_response :success
 	end
 
 	test "should create ride" do
 		assert_difference('Ride.count') do
-			post :create, ride: { description: @ride.description, request: @ride.request, from: @ride.from, to: @ride.to }, user_id: @user.id
+			post :create, ride: { title: @ride.title, description: @ride.description, request: @ride.request, from: @ride.from }, user_id: @user.id
 		end
 
 		assert_redirected_to user_ride_path(@user.id, assigns(:ride))
