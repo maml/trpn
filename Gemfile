@@ -20,6 +20,7 @@ end
 group :development, :test do
   gem 'redgreen'
   gem 'test-unit', '1.2.3'
+	gem 'debugger'
 end
 
 # Gems used only for assets and not required
