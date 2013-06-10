@@ -1,26 +1,11 @@
-<h1>Listing rides</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Request</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @rides.each do |ride| %>
-  <tr>
-    <td><%= ride.title %></td>
-    <td><%= ride.description %></td>
-    <td><%= ride.request %></td>
-    <td><%= link_to 'Show', ride_path(ride) %></td>
-		<td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-    <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	<p class="title"><%= ride.title %> (<%= ride.from %>)</p>
+	<p><%= ride.description %></p>
+	<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
+  <%= link_to 'Show', ride_path(ride) %>
+	<%= link_to 'Edit', edit_ride_path(ride) %>
+  <%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-</table>
 
 <br />
 
