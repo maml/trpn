@@ -15,6 +15,7 @@ class ActiveSupport::TestCase
 		user = users(:one)
 		user.save!
 		sign_in user
+		user
 	end
 		
 end
