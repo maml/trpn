@@ -1,9 +1,17 @@
-Given(/^I am a user of the app$/) do
-	User.create(email: 'user@example.com', password: 'p@ssw0rd', password_confirmation: 'p@ssw0rd')
+Given(/^I am a logged in user of the app$/) do
+	email = "user@example.com"
+	password = "p@ssw0rd"
+	
+	User.new(email: email, password: password, password_confirmation: password).save!
+
+	visit "/users/sign_in"
+	fill_in "user_email", with: email
+	fill_in "user_password", with: password
+	click_button "Sign in"
 end
 
 And(/^I am on the create a ride page$/) do
-	user_id = User.first.id
+	user_id = User.last.id
 	visit "/users/#{user_id}/rides/new"
 end
 
@@ -11,19 +19,16 @@ And(/^I am looking for a ride$/) do
 	choose "ride_request_looking"
 end
 
-And(/^I want to go from "(.*?)" to "(.*?)"$/) do |arg1, arg2|
+And(/^I am leaving from "(.*?)"$/) do |arg1|
 	fill_in :ride_from, with: arg1
-	fill_in :ride_to, with: arg2
 end
 
-And(/^I want to go on "(.*?)" "(.*?)" "(.*?)"$/) do |arg1, arg2, arg3|
-	select arg1, from: :ride_date_1i
-	select arg2, from: :ride_date_2i
-	select arg3, from: :ride_date_3i
+And(/^I enter a title$/) do
+	fill_in "ride_title", with: "Looking for a ride to St. Louis this weekend."
 end
 
 And(/^I enter a description$/) do
-	fill_in 'ride_description', with: "Hey there looking to head down to St. Louis for my cousing's wedding."
+	fill_in 'ride_description', with: "Heading down for my cousing's wedding. Can pay for gas."
 end
 
 When(/^I create a request for a ride$/) do
