@@ -4,6 +4,7 @@ class Rides::MessagesControllerTest < ActionController::TestCase
 
 	setup do
 		@ride = rides(:one)
+		login_user
   end
 
 	test "should get new" do
