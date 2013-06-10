@@ -114,7 +114,7 @@ class RidesController < ApplicationController
 	end
 
 	def distill_params
-		["title", "address", "latitude", "longitude"].each do |blacklisted_key|
+		["address", "latitude", "longitude"].each do |blacklisted_key|
 			params[:ride].delete_if { |key| key == blacklisted_key }
 		end
 	end

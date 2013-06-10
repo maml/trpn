@@ -23,9 +23,4 @@ class RideTest < ActiveSupport::TestCase
 		ride.to = nil
 		assert !ride.save, 'Saved a ride without a to'
 	end
-
-	test "title is composed of 'from' and 'to'" do
-		ride = rides(:one)
-		assert_equal("#{ride.from} to #{ride.to}", ride.title, "Expected title to be #{ride.from} to #{ride.to} but got #{ride.title} instead")
-	end
 end

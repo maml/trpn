@@ -13,7 +13,7 @@ class Users::RidesController < RidesController
 	# POST /users/:id/rides.json
 	def create
 		@ride = @user.rides.new(params[:ride])
-		
+		debugger		
 		respond_to do |format|
 			if @ride.save
 				format.html { redirect_to [@user, @ride], notice: 'Your request for a ride has been submitted. Good luck!' }

@@ -1,5 +1,5 @@
 class Ride < ActiveRecord::Base
-  attr_accessible :description, :request, :to, :from, :date
+  attr_accessible :description, :request, :to, :from, :date, :title
 
 	belongs_to :user
 	has_many :messages
@@ -13,9 +13,5 @@ class Ride < ActiveRecord::Base
 
 	def nearby(radius = 35)
 		self.nearbys(radius)
-	end
-	
-	def title
-		"#{read_attribute(:from)} to #{read_attribute(:to)}"
 	end
 end
