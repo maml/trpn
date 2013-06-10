@@ -4,9 +4,9 @@ class Ride < ActiveRecord::Base
 	belongs_to :user
 	has_many :messages
 
+	validates :title, :presence => true
 	validates :description, :presence => true
 	validates :from, :presence => true
-	validates :to, :presence => true
 
 	geocoded_by :from
 	after_validation :geocode
