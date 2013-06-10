@@ -1,6 +1,5 @@
 class RidesController < ApplicationController
 
-	before_filter :distill_params, :only => [:create, :update]
   before_filter :set_request_param_from_request_val, :only => [:create, :update]
 
 	# GET /rides
@@ -111,12 +110,6 @@ class RidesController < ApplicationController
 
 	def set_request_param_from_request_val
 	  params[:ride][:request] = RIDE_REQUEST_VALS_TO_BOOL_MAPPINGS[params[:ride][:request]]
-	end
-
-	def distill_params
-		["address", "latitude", "longitude"].each do |blacklisted_key|
-			params[:ride].delete_if { |key| key == blacklisted_key }
-		end
 	end
 
 end
