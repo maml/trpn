@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  description: Need to get to St. Louis for a family reunion
+  title: Need a ride to St. Louis this weekend
+  description: Heading down for a family reunion. Can split cost of gas.
   latitude: 37.757959 
   longitude: -122.431641 
-  request: false
+  request: true
   from: Chicago, IL
-  to: St. Louis, MO
 
   user: one 
 
 two:
-  description: Heading down to Kansas City for some baseball and bbq 
+  title: Need a ride to Kansas City
+  description: Heading down for some baseball and bbq 
   latitude: 37.761725 
   longitude: -122.431641 
-  request: false
+  request: true
   from: Chicago, IL
-  to: Kansas City, MO
 
   user: two 
