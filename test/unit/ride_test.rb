@@ -20,7 +20,7 @@ class RideTest < ActiveSupport::TestCase
 
 	test "it doesn't save a ride without a to" do
 		ride = rides(:one)
-		ride.to = nil
-		assert !ride.save, 'Saved a ride without a to'
+		ride.title = nil
+		assert !ride.save, 'Saved a ride without a title'
 	end
 end
