@@ -3,8 +3,9 @@ Feature: Messaging
 	As a user of the app
 	I want to be able to send a message in response to a ride
 
-	Scenario: I send a message to a ride
-		Given I am on a ride page
+	Scenario: A logged in user can send a message to a ride
+		Given I am a logged in user of the app
+		And I am on a ride page
 		When I press "Message"
 		Then I should see "Message"
 		When I enter a message
