@@ -1,5 +1,7 @@
 class Rides::MessagesController < ApplicationController
 
+	before_filter :authenticate_user!
+
 	def new
 		@message = Message.new
 		@ride = Ride.find(params[:ride_id])
