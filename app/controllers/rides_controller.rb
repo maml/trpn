@@ -1,7 +1,8 @@
 class RidesController < ApplicationController
 
   before_filter :set_request_param_from_request_val, :only => [:create, :update]
-
+	before_filter :authenticate_user!, except: [:index, :show]
+	
 	# GET /rides
   # GET /rides.json
   def index

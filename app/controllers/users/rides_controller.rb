@@ -1,6 +1,7 @@
 class Users::RidesController < RidesController
 
 	before_filter :load_user
+	before_filter :authenticate_user!, except: [:index, :show]
 
 	# GET /users/:id/rides
 	# GET /users/:id/rides.json
