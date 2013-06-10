@@ -19,7 +19,6 @@ class RidesController < ApplicationController
   def show
 
 		@ride ||= Ride.find(params[:id])
-		#@username= @ride.user.username
 
     respond_to do |format|
       format.html # show.html.erb

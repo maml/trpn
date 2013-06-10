@@ -1,3 +1,6 @@
 <p>
-	<%= link_to 'Message', new_ride_message_path(@ride) %>
+	<%= link_to 'Message', new_ride_message_path(@ride) %> |
+	<%= link_to 'Edit', edit_ride_path(@ride) %> |
+	<%= link_to 'Back', rides_path %> |
+	<%= link_to 'Destroy', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

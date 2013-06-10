@@ -1,6 +1,6 @@
-<p>Nearby rides</p>
+<h2>Nearby rides</h2>
 <ul>
-	<% for ride in @ride.nearby %>
-		<li><%= link_to ride.title, ride_path(ride) %></li>
+	<% for nearby in ride.nearby %>
+		<li><%= link_to nearby.title, ride_path(nearby) %></li>
 	<% end %>
 </ul>

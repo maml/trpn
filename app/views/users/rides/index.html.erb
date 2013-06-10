@@ -1,27 +1,2 @@
-<h1>Listing rides by <%= link_to "#{@user.username}", user_path(@user) %></h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Request</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rides.each do |ride| %>
-  <tr>
-    <td><%= ride.title %></td>
-    <td><%= ride.description %></td>
-    <td><%= ride.request %></td>
-    <td><%= link_to 'Show', user_ride_path(@user, ride) %></td>
-		<td><%= link_to 'Edit', edit_user_ride_path(@user, ride) %></td>
-    <td><%= link_to 'Destroy', [@user, ride], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Ride', new_user_ride_path %>
+<%= render :partial => "rides/ride", :collection => @rides %>
+<%= link_to "New Ride", new_user_ride_path %>

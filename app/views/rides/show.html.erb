@@ -1,6 +1,3 @@
-<%= render 'ride' %>
+<%= render :partial => "ride", :locals => { :ride => @ride } %>
 <%= render "actions" %>
-<%= render "nearby" %>
-
-<%= link_to 'Edit', edit_ride_path(@ride) %> |
-<%= link_to 'Back', rides_path %>
+<%= render :partial => "nearby", :locals => { :ride => @ride } %>

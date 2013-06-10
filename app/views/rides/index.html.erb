@@ -1,12 +1,3 @@
-<% @rides.each do |ride| %>
-	<p class="title"><%= ride.title %> (<%= ride.from %>)</p>
-	<p><%= ride.description %></p>
-	<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
-  <%= link_to 'Show', ride_path(ride) %>
-	<%= link_to 'Edit', edit_ride_path(ride) %>
-  <%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-
+<%= render :partial => "ride", :collection => @rides %>
 <br />
-
 <%= link_to 'New Ride', new_ride_path %>

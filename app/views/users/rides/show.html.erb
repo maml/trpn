@@ -1,4 +1,4 @@
-<%= render 'rides/ride' %>
+<%= render :partial => "rides/ride", :locals => { :ride => @ride } %>
 
 <%= link_to 'Edit', edit_user_ride_path(@user, @ride) %> |
 <%= link_to 'Back', user_rides_path(@user) %>

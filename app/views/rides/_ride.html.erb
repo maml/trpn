@@ -1,19 +1,7 @@
-<p>
-  <b>Title:</b>
-  <%= @ride.title %>
-</p>
-
-<p>
-	<b>posted by:</b>
-	<%= @ride.user.username %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @ride.description %>
-</p>
-
-<p>
-  <b>Request:</b>
-  <%= @ride.request %>
-</p>
+<% if @user %>
+	<p class="title"><%= link_to_unless_current "#{ride.title}", user_ride_path(@user, ride) %> (<%= ride.from %>)</p>
+<% else %>
+	<p class="title"><%= link_to_unless_current "#{ride.title}", ride_path(ride) %> (<%= ride.from %>)</p>
+<% end %>
+<p><%= ride.description %></p>
+<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
