@@ -1,7 +1,7 @@
-Feature: Request a ride 
-	In order to let others know that I need a ride
+Feature: Ride 
+	In order to let others know about my rides 
 	As a user of the app
-	I want to be able to request a ride
+	I want to be able to post rides
 
 	Scenario: I'm looking for a ride from Chicago 
 		Given I am a logged in user of the app
