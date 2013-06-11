@@ -38,3 +38,23 @@ end
 When(/^I create a request for a ride$/) do
 	click_on 'Create Ride'
 end
+
+Then(/^I should not see "(.*?)"$/) do |arg1|
+	assert !page.has_content?(arg1)
+end
+
+When(/^I am on a users ride page$/) do
+	ride = Ride.create(
+		request: true,
+		title: "Need a ride to St. Louis this weekend",
+		description: "Heading down for a family reunion",
+		from: "Chicago, IL"
+	)
+
+	user = User.create(email: "donny@who_loved_bowling.com", password: "p@ssw0rd")
+	ride.user = user
+	ride.save!
+
+	visit "/users/#{user.id}/rides/#{ride.id}"
+end
+
