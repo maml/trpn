@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 	def login_user
 		@request.env["devise.mappings"] = Devise.mappings[:user]
-		user = users(:one)
+		user = users(:two)
 		user.save!
 		sign_in user
 		user

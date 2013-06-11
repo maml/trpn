@@ -44,6 +44,17 @@ class RidesController < ApplicationController
 		
 		@looking = @ride.request == true ? true : false
 		@offering = @ride.request == false ? true : false
+
+		# Users::RidesController < RidesController
+		#
+		# if we're at users/:id/rides/:id/edit then we want to redirect back to the
+		# user_ride_path if the current_user is not the ride's user, otherwise we
+		# redirect back to ride/:id
+		if params[:user_id].present?
+			redirect_to user_ride_path unless @ride.user == current_user
+		else
+			redirect_to ride_path unless @ride.user == current_user
+		end
   end
 
   # POST /rides

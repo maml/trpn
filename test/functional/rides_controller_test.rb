@@ -32,12 +32,20 @@ class RidesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-		login_user
+		user = login_user
+		@ride.user = user
+		@ride.save!
     get :edit, id: @ride
 		assert_not_nil assigns(:offering), "@offering has not been assigned"
 		assert_not_nil assigns(:looking), "@looking has not been assigned"
     assert_response :success
   end
+
+	test "edit should redirect to show if current user is not the ride's user" do
+		login_user
+		get :edit, id: @ride
+		assert_redirected_to ride_path(@ride)
+	end
 
   test "should update ride" do
 		login_user
