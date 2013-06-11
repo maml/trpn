@@ -13,3 +13,7 @@ Feature: Request a ride
 		When I create a request for a ride
 		Then I should see "Your request for a ride has been submitted. Good luck!"
 
+	Scenario: Non logged in user attempts to create a ride
+		Given I am on the rides page
+		When I press "New Ride"
+		Then I should see "You need to sign in or sign up before continuing."

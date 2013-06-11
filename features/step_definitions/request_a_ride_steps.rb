@@ -15,6 +15,10 @@ And(/^I am on the create a ride page$/) do
 	visit "/users/#{user_id}/rides/new"
 end
 
+Given(/^I am on the rides page$/) do
+	visit "/rides"
+end
+
 And(/^I am looking for a ride$/) do
 	choose "ride_request_looking"
 end
