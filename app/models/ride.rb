@@ -7,6 +7,7 @@ class Ride < ActiveRecord::Base
 	validates :title, :presence => true
 	validates :description, :presence => true
 	validates :from, :presence => true
+	validates :user_id, :presence => true
 
 	geocoded_by :from
 	after_validation :geocode

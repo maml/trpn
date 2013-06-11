@@ -18,9 +18,15 @@ class RideTest < ActiveSupport::TestCase
 		assert !ride.save, 'Saved a ride without a from'
 	end
 
-	test "it doesn't save a ride without a to" do
+	test "it doesn't save a ride without a title" do
 		ride = rides(:one)
 		ride.title = nil
 		assert !ride.save, 'Saved a ride without a title'
+	end
+
+	test "it doesn't save a ride without a user" do
+		ride = rides(:one)
+		ride.user = nil
+		assert !ride.save, "Saved a ride without a user"
 	end
 end
