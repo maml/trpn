@@ -13,12 +13,12 @@ class Users::RidesController < RidesController
 	# POST /users/:id/rides
 	# POST /users/:id/rides.json
 	def create
-		@ride = @user.rides.new(params[:ride])
+		@ride = current_user.rides.new(params[:ride])
 		
 		respond_to do |format|
 			if @ride.save
-				format.html { redirect_to [@user, @ride], notice: 'Your request for a ride has been submitted. Good luck!' }
-       	format.json { render json: [@user, @ride], status: :created, location: [@user, @ride] }
+				format.html { redirect_to [current_user, @ride], notice: 'Your request for a ride has been submitted. Good luck!' }
+       	format.json { render json: [current_user, @ride], status: :created, location: [current_user, @ride] }
 			else
 				format.html { render action: "new" }
 				format.json { render json: @ride.errors, status: :unprocessable_entity }
@@ -30,11 +30,11 @@ class Users::RidesController < RidesController
 	# PUT /users/:id/rides/1
 	# PUT /users/:idrides/1.json
 	def update
-		@ride = @user.rides.find(params[:id])
+		@ride = current_user.rides.find(params[:id])
 
 		respond_to do |format|
 			if @ride.update_attributes(params[:ride])
-				format.html { redirect_to [@user, @ride], notice: 'Ride was successfully updated.' }
+				format.html { redirect_to [current_user, @ride], notice: 'Ride was successfully updated.' }
 				format.json { head :no_content }
 			else
 				format.html { render action: "edit" }
@@ -44,7 +44,7 @@ class Users::RidesController < RidesController
 	end
 
 	def destroy
-		@ride = @user.rides.find(params[:id])
+		@ride = current_user.rides.find(params[:id])
 		@ride.destroy
 
 		respond_to do |format|
