@@ -1,5 +1,5 @@
 <p>
-	<%= link_to 'Message', new_ride_message_path(@ride) %> |
+	<%= link_to 'Message', new_user_ride_message_path(@user, @ride) %> |
 
 	<% if (current_user && (@ride.user == current_user)) %>
 		<%= link_to "Edit", edit_user_ride_path(current_user, @ride) %> |

@@ -1,4 +1,4 @@
-class Rides::MessagesController < ApplicationController
+class Users::Rides::MessagesController < ApplicationController
 
 	before_filter :authenticate_user!
 
@@ -13,7 +13,7 @@ class Rides::MessagesController < ApplicationController
 
 		respond_to do |format|
 			if @message.save
-				format.html { redirect_to ride_path(@ride), notice: "Your message has been sent!" }
+				format.html { redirect_to user_ride_path(@ride.user, @ride), notice: "Your message has been sent!" }
 				format.json { render json: @ride, status: :created, location: @ride }
 			else
 				format.html { render action: "new" }
