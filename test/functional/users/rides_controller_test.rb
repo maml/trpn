@@ -20,6 +20,13 @@ class Users::RidesControllerTest < ActionController::TestCase
 		assert_response :success
 	end
 
+	test "new should redirect to index if the logged in user is on someone else's new route" do
+		# login_user returns the logged in user, which is hardcoded to users(:one)
+		user1 = users(:one)
+		get :new, user_id: user1.id
+		assert_redirected_to user_rides_path(user1)	
+	end
+
 	test "should create ride" do
 		assert_difference('Ride.count') do
 			post :create, ride: { title: @ride.title, description: @ride.description, request: @ride.request, from: @ride.from }, user_id: @user.id

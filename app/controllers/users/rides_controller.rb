@@ -10,6 +10,16 @@ class Users::RidesController < RidesController
 		super
 	end
 
+	def new
+		# if the current user tries to hit another user's new ride page, users/:id/rides/new,
+		# we redirect them to that user's rides page: users/:id/rides
+		if current_user != @user
+			redirect_to user_rides_path(@user)
+			return
+		end
+		super
+	end
+
 	# POST /users/:id/rides
 	# POST /users/:id/rides.json
 	def create
