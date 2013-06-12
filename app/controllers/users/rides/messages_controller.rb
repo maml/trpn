@@ -2,6 +2,13 @@ class Users::Rides::MessagesController < ApplicationController
 
 	before_filter :authenticate_user!
 
+	def index
+		@ride = Ride.find(params[:ride_id])
+		redirect_to user_ride_path(@ride.user, @ride) unless current_user == @ride.user
+		@user = current_user
+		@messages = @ride.messages
+	end
+
 	def new
 		@message = Message.new
 		@ride = Ride.find(params[:ride_id])

@@ -21,6 +21,7 @@ class RidesController < ApplicationController
 
 		@ride ||= Ride.find(params[:id])
 		@user = @ride.user
+		@messages = @ride.messages
 
     respond_to do |format|
       format.html # show.html.erb

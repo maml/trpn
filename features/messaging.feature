@@ -11,3 +11,8 @@ Feature: Messaging
 		When I enter a message
 		And I press "Send Message"
 		Then I should see "Your message has been sent!"
+	
+	Scenario: I can view the messages for my ride
+		Given I am a logged in user of the app
+		And I am on my ride page that has a message
+		Then I should see "Show messages"
