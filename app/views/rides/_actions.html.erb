@@ -11,14 +11,3 @@
 		| <%= link_to "Destroy", ride, method: :delete, data: { confirm: "Are you sure?" } %>
 	<% end %>
 </p>
-
-<p>
-	<% if ride.messages.any? %>
-		This ride has been messaged <%= pluralize(ride.messages.count, "time") %>.
-		<% if ride.user == current_user %>
-			<%= link_to "Show messages", user_ride_messages_path(current_user, ride) %>
-		<% end %>
-	<% else %>
-		This ride does not have any messages. 
-	<% end %>
-</p>
