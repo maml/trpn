@@ -15,6 +15,11 @@ class Users::Rides::MessagesControllerTest < ActionController::TestCase
 		assert_not_nil assigns(:messages)
 	end
 
+	test "index should redirect to user ride path if the current user is not the user that created the ride" do
+		get :index, ride_id: @ride.id, user_id: @user.id
+		assert_redirected_to user_ride_path(@ride.user, @ride)
+ 	end	
+
 	test "should get new" do
 		get :new, ride_id: @ride.id, user_id: @user.id
 		assert_not_nil assigns(:message)
