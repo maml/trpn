@@ -4,6 +4,7 @@ class Users::Rides::MessagesController < ApplicationController
 
 	def index
 		@ride = Ride.find(params[:ride_id])
+		# todo - test this
 		redirect_to user_ride_path(@ride.user, @ride) unless current_user == @ride.user
 		@user = current_user
 		@messages = @ride.messages

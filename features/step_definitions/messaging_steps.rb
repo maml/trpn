@@ -8,7 +8,7 @@ And(/^I am on a ride page$/) do
 
 	ride.user = User.create(email: "donny@who_loved_bowling.com", password: "p@ssw0rd")
 	ride.save!
-
+	
 	visit "/rides/#{ride.id}"
 end
 

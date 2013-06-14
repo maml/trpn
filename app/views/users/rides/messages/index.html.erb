@@ -1,6 +1,6 @@
 <%= render :partial => "rides/ride", :locals => { ride: @ride } %>
 
-<%= render "rides/actions" %>
+<%= render :partial => "rides/actions", :locals => { ride: @ride } %>
 
 <p class="title">Messages</p>
 <% @messages.each do |msg| %>

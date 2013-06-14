@@ -1,22 +1,22 @@
 <p>
-	<%= link_to 'Message', new_user_ride_message_path(@user, @ride) %> |
+	<%= link_to 'Message', new_user_ride_message_path(ride.user, ride) %> |
 
-	<% if (current_user && (@ride.user == current_user)) %>
-		<%= link_to "Edit", edit_user_ride_path(current_user, @ride) %> |
+	<% if (current_user && (ride.user == current_user)) %>
+		<%= link_to "Edit", edit_user_ride_path(current_user, ride) %> |
 	<% end %>
 	
 	<%= link_to 'Back', rides_path %>
 
-	<% if (current_user && (@ride.user == current_user)) %>
-		| <%= link_to "Destroy", @ride, method: :delete, data: { confirm: "Are you sure?" } %>
+	<% if (current_user && (ride.user == current_user)) %>
+		| <%= link_to "Destroy", ride, method: :delete, data: { confirm: "Are you sure?" } %>
 	<% end %>
 </p>
 
 <p>
-	<% if @messages.any? %>
-		This ride has been messaged <%= pluralize(@messages.count, "time") %>.
-		<% if @ride.user == current_user %>
-			<%= link_to "Show messages", user_ride_messages_path(current_user, @ride) %>
+	<% if ride.messages.any? %>
+		This ride has been messaged <%= pluralize(ride.messages.count, "time") %>.
+		<% if ride.user == current_user %>
+			<%= link_to "Show messages", user_ride_messages_path(current_user, ride) %>
 		<% end %>
 	<% else %>
 		This ride does not have any messages. 
