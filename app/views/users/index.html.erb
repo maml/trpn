@@ -1,13 +1,7 @@
-<h1>Listing users</h1>
-
-<table>
-  <tr>
-    <th>Email</th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.email %> [<%= link_to 'show', user %>]</td>
-  </tr>
-<% end %>
-</table>
+<section>
+	<ul>
+		<% @users.each do |user| %>
+			<li><%= user.username %> [<%= link_to 'show', user %>]</li>
+		<% end %>
+	</ul>
+</section>
