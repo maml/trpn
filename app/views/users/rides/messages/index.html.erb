@@ -3,7 +3,7 @@
 
 <p class="title">Messages</p>
 <% @messages.each do |msg| %>
-	<p><%= msg.message %></p>
+	<%= render :partial => "message", :locals => { message: msg } %>
 <% end %>
 
 <%= render :partial => "rides/nearby", :locals => { :ride => @ride } %>
