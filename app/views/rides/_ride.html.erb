@@ -1,7 +1,9 @@
-<% if @user %>
-	<p class="title"><%= link_to_unless_current "#{ride.title}", user_ride_path(@user, ride) %> (<%= ride.from %>)</p>
-<% else %>
-	<p class="title"><%= link_to_unless_current "#{ride.title}", ride_path(ride) %> (<%= ride.from %>)</p>
-<% end %>
-<p><%= ride.description %></p>
-<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
+<section class="ride">
+	<% if @user %>
+		<p class="title"><%= link_to_unless_current "#{ride.title}", user_ride_path(@user, ride) %> (<%= ride.from %>)</p>
+	<% else %>
+		<p class="title"><%= link_to_unless_current "#{ride.title}", ride_path(ride) %> (<%= ride.from %>)</p>
+	<% end %>
+	<p><%= ride.description %></p>
+	<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
+</section>
