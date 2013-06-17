@@ -1,9 +1,10 @@
 <%= render :partial => "rides/ride", :locals => { ride: @ride } %>
 <%= render :partial => "rides/actions", :locals => { ride: @ride } %>
 
-<p class="title">Messages</p>
-<% @messages.each do |msg| %>
-	<%= render :partial => "message", :locals => { message: msg } %>
-<% end %>
-
+<section class="ride-messaging">
+	<p class="title">Messages</p>
+	<% @messages.each do |msg| %>
+		<%= render :partial => "message", :locals => { message: msg } %>
+	<% end %>
+</section>
 <%= render :partial => "rides/nearby", :locals => { :ride => @ride } %>

@@ -1,4 +1,4 @@
-<p>
+<section class="ride-actions">
 	<%= link_to 'Message', new_user_ride_message_path(ride.user, ride) %> |
 
 	<% if (current_user && (ride.user == current_user)) %>
@@ -10,4 +10,4 @@
 	<% if (current_user && (ride.user == current_user)) %>
 		| <%= link_to "Destroy", ride, method: :delete, data: { confirm: "Are you sure?" } %>
 	<% end %>
-</p>
+</section>

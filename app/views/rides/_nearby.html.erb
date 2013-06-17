@@ -1,8 +1,10 @@
 <% if ride.nearby.count > 0 %>
-	<h2>Nearby rides</h2>
-	<ul>
-		<% for nearby in ride.nearby %>
-			<li><%= link_to nearby.title, ride_path(nearby) %></li>
-		<% end %>
-	</ul>
+	<section class="rides-nearby">
+		<h2>Nearby rides</h2>
+		<ul>
+			<% for nearby in ride.nearby %>
+				<li><%= link_to nearby.title, ride_path(nearby) %></li>
+			<% end %>
+		</ul>
+	</section>
 <% end %>
