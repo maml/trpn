@@ -6,9 +6,16 @@ class RidesController < ApplicationController
 	# GET /rides
   # GET /rides.json
   def index
-		
-		@rides ||= Ride.all
-
+		@rides = if params[:lat] && params[:lng]
+      Ride.near([params[:lat], params[:lng]])
+    else
+      Ride.scoped
+    end
+    
+    if params[:page]
+      @rides = @rides.page(params[:page])
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: { rides: @rides.as_json(root: false) } }
