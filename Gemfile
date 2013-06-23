@@ -7,6 +7,7 @@ gem 'mandrill-api'
 gem 'geocoder'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'devise'
+gem 'kaminari'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
