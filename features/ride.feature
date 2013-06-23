@@ -15,7 +15,7 @@ Feature: Ride
 
 	Scenario: I'm not logged in and attempt to create a ride
 		Given I am on the rides page
-		When I press "New Ride"
+		When I press "Create a new ride"
 		Then I should see "You need to sign in or sign up before continuing."
 
 	Scenario: I'm not logged in, viewing a ride, and shouldn't be able to edit that ride
