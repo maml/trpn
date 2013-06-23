@@ -7,7 +7,10 @@ class Users::RidesController < RidesController
 	# GET /users/:id/rides.json
 	def index
 		@rides = @user.rides.all
-		super
+		respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: { rides: @rides.as_json(root: false) } }
+    end
 	end
 
 	def new
