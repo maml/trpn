@@ -2,8 +2,6 @@
 
 one:
   email: 'theDude@gmail.com' 
-  password: 'p@ssw0rd'
 
 two:
   email: 'maude@gmail.com' 
-  password: 'p@ssw0rd' 
