@@ -2,7 +2,6 @@ class Ride < ActiveRecord::Base
   attr_accessible :description, :request, :to, :from, :date, :title
 
 	belongs_to :user
-	has_many :messages
 
 	validates :title, :presence => true
 	validates :description, :presence => true

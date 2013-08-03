@@ -3,9 +3,7 @@ Trpn::Application.routes.draw do
 	devise_for :users
   
 	resources :users, :only => [:index, :show] do
-  	resources :rides, :controller => "users/rides" do
-			resources :messages, :controller => "users/rides/messages"
-		end
+  	resources :rides, :controller => "users/rides"
 	end
 
 	resources :rides

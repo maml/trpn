@@ -1,8 +1,0 @@
-<% if ride.messages.any? %>
-	<section class="ride-messaging">
-		<p>This ride has been messaged <%= pluralize(ride.messages.count, "time") %>.</p>
-		<% if ride.user == current_user %>
-			<%= link_to "Show messages", user_ride_messages_path(current_user, ride) %>
-		<% end %>
-	</section>
-<% end %>
