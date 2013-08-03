@@ -16,7 +16,9 @@ class Users::Rides::MessagesController < ApplicationController
 
 	def create
 		@ride = Ride.find(params[:ride_id])
-		@message = @ride.messages.new(params[:message])
+    
+		params[:message][:user_id] = current_user.id
+    @message = @ride.messages.new(params[:message])
 
 		respond_to do |format|
 			if @message.save
