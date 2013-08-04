@@ -2,7 +2,7 @@
 	<% @users.each do |user| %>
 		<section class="user">
 			<header>
-				<h1><%= link_to "#{user.username}", user %></h1>
+				<h1><%= link_to "#{user.name}", user %></h1>
 			</header>
 			<p><%= pluralize("#{user.rides.count}", "rides") %> posted</p>
 		</section>

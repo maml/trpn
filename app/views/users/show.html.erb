@@ -1,6 +1,6 @@
 <section class="user">
 	<header>
-		<h1><%= @user.username %></h1>
+		<h1><%= @user.name %></h1>
 		</header>
 		<p><%= link_to "#{pluralize(@user.rides.count, 'rides')} posted", user_rides_path(@user) %></p>
 </section>

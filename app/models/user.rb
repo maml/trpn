@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
 	has_many :rides
 
-	def username
+	def name
 		read_attribute('email').split("@")[0]
 	end
 end

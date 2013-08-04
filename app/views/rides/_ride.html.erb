@@ -7,5 +7,5 @@
 		<% end %>
 	</header>
 	<p><%= ride.description %></p>
-	<p>posted by <%= link_to "#{ride.user.username}", user_path(ride.user) %></p>
+	<p>posted by <%= link_to "#{ride.user.name}", user_path(ride.user) %></p>
 </section>
