@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806023810) do
+ActiveRecord::Schema.define(:version => 20130806181602) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130806023810) do
     t.string   "notified_object_type"
     t.string   "notification_code"
     t.string   "attachment"
+    t.boolean  "global",               :default => false
+    t.datetime "expires"
   end
 
   add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
@@ -49,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20130806023810) do
     t.integer  "receiver_id"
     t.string   "receiver_type"
     t.integer  "notification_id",                                  :null => false
-    t.boolean  "read",                          :default => false
+    t.boolean  "is_read",                       :default => false
     t.boolean  "trashed",                       :default => false
     t.boolean  "deleted",                       :default => false
     t.string   "mailbox_type",    :limit => 25
