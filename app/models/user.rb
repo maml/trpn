@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
 	def name
 		read_attribute('email').split("@")[0]
 	end
+
+	def mailboxer_email
+		nil
+	end
 end

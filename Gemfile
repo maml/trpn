@@ -8,6 +8,7 @@ gem 'geocoder'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'devise'
 gem 'kaminari'
+gem 'mailboxer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
