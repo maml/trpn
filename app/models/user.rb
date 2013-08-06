@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
 	has_many :rides
 
+	acts_as_messageable
+
 	def name
 		read_attribute('email').split("@")[0]
 	end
