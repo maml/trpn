@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
 		read_attribute('email').split("@")[0]
 	end
 
-	def mailboxer_email
-		nil
-	end
+	# required for mailboxer so it has an email to which it may send. not currently
+	# used but this method needs to return nil
+	def mailboxer_email ; end
+
 end
