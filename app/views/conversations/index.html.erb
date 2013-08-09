@@ -1,13 +1,12 @@
 <h1>Mailbox</h1>
-<p><%= current_user.mailbox.inspect %></p>
 
 <ul>
 	<li>
-		<p>notifications</p>
+		<h2>notifications</h2>
 		<%= current_user.mailbox.notifications.inspect %>
 	</li>
 	<li>
-		<p>inbox</p>
+		<h2>inbox</h2>
 		<ul>
 			<% current_user.mailbox.inbox.each do |conversation| %>
 				<% conversation.messages.each do |m| %>
@@ -17,7 +16,7 @@
 		</ul>
 	</li>
 	<li>
-		<p>sentbox</p>
+		<h2>sentbox</h2>
 		<ul>
 			<% current_user.mailbox.sentbox.each do |conversation| %>
 				<% conversation.messages.each do |m| %>
@@ -27,7 +26,7 @@
 		</ul>
 	</li>
 	<li>
-		<p>trash</p>
+		<h2>trash</h2>
 		<%= current_user.mailbox.trash.inspect %>
 	</li>
 </ul>
