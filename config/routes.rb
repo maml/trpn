@@ -14,6 +14,8 @@ Trpn::Application.routes.draw do
 		end
 	end
 
+	get "mailbox", to: "conversations#index"
+
 	resources :rides
 
 	# TODO - remove this feature

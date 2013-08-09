@@ -1,4 +1,5 @@
-<p>conversations for <%= current_user.name %></p>
+<h1>Mailbox</h1>
+<p><%= current_user.name %></p>
 
 <% @conversations.each do |c| %>
 	<p><%= c.inspect %></p>
