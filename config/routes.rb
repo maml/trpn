@@ -6,6 +6,14 @@ Trpn::Application.routes.draw do
   	resources :rides, :controller => "users/rides"
 	end
 
+	resources :conversations, only: [:index, :show, :new, :create] do
+		member do
+			post :reply
+			post :trash
+			post :untrash
+		end
+	end
+
 	resources :rides
 
 	# TODO - remove this feature
