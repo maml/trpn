@@ -1,0 +1,5 @@
+<p>conversations for <%= current_user.name %></p>
+
+<% @conversations.each do |c| %>
+	<p><%= c.inspect %></p>
+<% end %>
