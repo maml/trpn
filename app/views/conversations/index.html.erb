@@ -1,6 +1,33 @@
 <h1>Mailbox</h1>
-<p><%= current_user.name %></p>
+<p><%= current_user.mailbox.inspect %></p>
 
-<% @conversations.each do |c| %>
-	<p><%= c.inspect %></p>
-<% end %>
+<ul>
+	<li>
+		<p>notifications</p>
+		<%= current_user.mailbox.notifications.inspect %>
+	</li>
+	<li>
+		<p>inbox</p>
+		<ul>
+			<% current_user.mailbox.inbox.each do |conversation| %>
+				<% conversation.messages.each do |m| %>
+					<li><%= link_to "#{m.subject}", root_path %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</li>
+	<li>
+		<p>sentbox</p>
+		<ul>
+			<% current_user.mailbox.sentbox.each do |conversation| %>
+				<% conversation.messages.each do |m| %>
+					<li><%= link_to "#{m.subject}", root_path %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</li>
+	<li>
+		<p>trash</p>
+		<%= current_user.mailbox.trash.inspect %>
+	</li>
+</ul>
