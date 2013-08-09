@@ -5,6 +5,7 @@
 
 User.delete_all
 Ride.delete_all
+Conversation.destroy_all
 
 @bstolte   = User.create({ email: 'bstolte@example.com', password: 'p@ssw0rd' })
 @keithnorm = User.create({ email: 'keithnorm@example.com', password: 'p@ssw0rd' })
@@ -69,3 +70,13 @@ looking for a passenger to ride part of or the whole way there. must have a driv
 @bstolte.rides = @bstolte_rides
 @keithnorm.rides = @keithnorm_rides
 @mloseke.rides = @mloseke_rides
+
+# send some messages
+@bstolte.send_message(@keithnorm, "ceephax carfax", "sub ject ified")
+@bstolte.send_message(@mloseke, "xafrac xahpeec", "diggie oree doo")
+
+@keithnorm.send_message(@bstolte, "the name is Die innere orange", "a song from mouse on mars")
+@keithnorm.send_message(@mloseke, "two turn tables and a microphone", "get fre")
+
+@mloseke.send_message(@bstolte, "put the needle on the record", "where it's at")
+@mloseke.send_message(@keithnorm, "dance dance revolution top model aft", "pump up the volume")
