@@ -14,11 +14,14 @@ Trpn::Application.routes.draw do
 		end
 	end
 
-	resources :messages
-
 	get "mailbox", to: "conversations#index"
 
-	resources :rides
+	resources :rides do
+		member do
+			get :message
+			post :send_message
+		end
+	end
 
 	# TODO - remove this feature
 	resources :subscriptions, :only => [:create]

@@ -109,6 +109,13 @@ class RidesController < ApplicationController
     end
   end
 
+	def send_message
+		sender = current_user
+		recipient = Ride.find(params[:id]).user
+		sender.send_message(recipient, params[:body], params[:subject])
+		redirect_to ride_path(params[:id]), notice: "Your message has been sent!"
+	end
+
 	private
 
 	# Instances of Ride have a boolean attribute, request, that is meant to indicate wether

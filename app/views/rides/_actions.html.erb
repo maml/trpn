@@ -1,4 +1,6 @@
 <section class="ride-actions">
+	<%= link_to "Message", message_ride_path %> |
+
 	<% if (current_user && (ride.user == current_user)) %>
 		<%= link_to "Edit", edit_user_ride_path(current_user, ride) %> |
 	<% end %>

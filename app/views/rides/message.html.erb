@@ -1,0 +1,15 @@
+<h1>rides#send_message</h1>
+
+<%= form_tag(controller: "rides", action: "send_message", method: "post") do %>
+	<div class="field">
+		<%= label_tag(:subject, "Subject") %><br />
+		<%= text_field_tag(:subject) %>
+	</div>
+	<div class="field">
+		<%= label_tag(:body, "Body") %><br />
+		<%= text_field_tag(:body) %><br />
+	<div>
+	<div class="actions">
+		<%= submit_tag("Submit") %>
+	</div>
+<% end %>
