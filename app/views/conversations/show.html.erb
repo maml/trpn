@@ -1,1 +1,15 @@
-<h1>conversations#show</h1>
+<h1><%= @conversation.subject %></h1>
+
+<% @messages.each do |message| %>
+	<p>sent: <%= message.created_at %></p>
+	<p>from: <%= User.find(message.sender_id).name %></p>
+	<p>body: <%= message.body %></p>
+<% end %>
+
+<%= form_tag(controller: "conversations", action: "reply", method: "post") do %>
+	<div class="field">
+		<%= text_area_tag(:body) %>
+	<div class="actions">
+		<%= submit_tag("Reply") %>
+	</div>
+<% end %>

@@ -8,7 +8,6 @@ Feature: Messaging
 		And I am on a ride page
 		When I press "Message"
 		Then I should see "rides#send_message"
-		And I enter a subject
 		And I enter a body
 		And I press "Submit"
 		Then I should see "Your message has been sent!"

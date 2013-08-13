@@ -19,14 +19,6 @@ ActiveRecord::Schema.define(:version => 20130806181602) do
     t.datetime "updated_at",                 :null => false
   end
 
-  create_table "messages", :force => true do |t|
-    t.text     "message"
-    t.integer  "ride_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
-  end
-
   create_table "notifications", :force => true do |t|
     t.string   "type"
     t.text     "body"
