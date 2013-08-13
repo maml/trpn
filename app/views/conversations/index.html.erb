@@ -1,30 +1,11 @@
 <h1>Conversations</h1>
 
-<ul>
-	<li>
-		<h2>notifications</h2>
-		<%= current_user.mailbox.notifications.inspect %>
-	</li>
-	<li>
-		<h2>inbox</h2>
-		<ul>
-			<% current_user.mailbox.inbox.each do |conversation| %>
-				<li><%= link_to "#{conversation.subject}", conversation_path(conversation) %></li>
-			<% end %>
-		</ul>
-	</li>
-	<li>
-		<h2>sentbox</h2>
-		<ul>
-			<% current_user.mailbox.sentbox.each do |conversation| %>
-				<% conversation.messages.each do |m| %>
-					<li><%= link_to "#{m.subject}", root_path %></li>
-				<% end %>
-			<% end %>
-		</ul>
-	</li>
-	<li>
-		<h2>trash</h2>
-		<%= current_user.mailbox.trash.inspect %>
-	</li>
-</ul>
+<% @conversations.each do |conversation| %>
+	<h2><%= link_to "#{conversation.subject}", conversation_path(conversation) %></h2>
+	<% conversation.messages.order("created_at ASC").each do |message| %>
+		<p>sent: <%= message.created_at %></p>
+		<p>from: <%= User.find(message.sender_id).name %></p>
+		<p>body: <%= message.body %></p>
+	<% end %>
+	<p><%= link_to "Reply", conversation_path(conversation) %></p>
+<% end %>
