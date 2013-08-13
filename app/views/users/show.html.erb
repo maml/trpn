@@ -4,6 +4,6 @@
 		</header>
 		<p><%= link_to "#{pluralize(@user.rides.count, 'rides')} posted", user_rides_path(@user) %></p>
 		<% if current_user == @user %>
-			<p><%= link_to "mailbox", mailbox_path %></p>
+			<p><%= link_to "Conversations", conversations_path %></p>
 		<% end %>
 </section>

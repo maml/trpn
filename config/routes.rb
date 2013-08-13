@@ -14,8 +14,6 @@ Trpn::Application.routes.draw do
 		end
 	end
 
-	get "mailbox", to: "conversations#index"
-
 	resources :rides do
 		member do
 			get :message
