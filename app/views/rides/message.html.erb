@@ -3,11 +3,11 @@
 <%= form_tag(controller: "rides", action: "send_message", method: "post") do %>
 	<div class="field">
 		<%= label_tag(:subject, "Subject") %><br />
-		<%= text_field_tag(:subject) %>
+		<p>Re: <%= @ride.title %></p>
 	</div>
 	<div class="field">
 		<%= label_tag(:body, "Body") %><br />
-		<%= text_field_tag(:body) %><br />
+		<%= text_area_tag(:body) %><br />
 	<div>
 	<div class="actions">
 		<%= submit_tag("Submit") %>
