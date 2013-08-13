@@ -109,11 +109,13 @@ class RidesController < ApplicationController
     end
   end
 
+	def message ; @ride = Ride.find(params[:id]) ; end
+
 	def send_message
-		sender = current_user
-		recipient = Ride.find(params[:id]).user
-		sender.send_message(recipient, params[:body], params[:subject])
-		redirect_to ride_path(params[:id]), notice: "Your message has been sent!"
+		@ride = Ride.find(params[:id])
+		@recipient = @ride.user
+		current_user.send_message(@recipient, params[:body], "Re: #{@ride.title}")
+		redirect_to ride_path(@ride), notice: "Your message has been sent!"
 	end
 
 	private
