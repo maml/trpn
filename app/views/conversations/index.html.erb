@@ -9,9 +9,7 @@
 		<h2>inbox</h2>
 		<ul>
 			<% current_user.mailbox.inbox.each do |conversation| %>
-				<% conversation.messages.each do |m| %>
-					<li><%= link_to "#{m.subject}", root_path %></li>
-				<% end %>
+				<li><%= link_to "#{conversation.subject}", conversation_path(conversation) %></li>
 			<% end %>
 		</ul>
 	</li>
