@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-	default from: "notifications@staging.trpn.me"
+	default from: "notifications@trpn.me"
 
 	def launch_welcome_email(user)
 		unless Rails.env == "development"
