@@ -1,0 +1,38 @@
+#rides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    border-bottom: 1px solid gray;
+    padding: 20px 0;
+  }
+  
+  dl {
+    overflow: auto;
+  }
+  
+  dt {
+    clear: left;
+    float: left;
+    width: 100px;
+  }
+  
+  dd {
+    float: left;
+    width: 400px;
+    margin: 0;
+  }
+  
+  input[type="text"] {
+    width: 400px;
+  }
+  
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+  
+  input[type="submit"] {
+    margin-left: 100px;
+  }
+}

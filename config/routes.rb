@@ -23,6 +23,8 @@ Trpn::Application.routes.draw do
 
 	# TODO - remove this feature
 	resources :subscriptions, :only => [:create]
+  
+  resources :import, :only => [:index]
 
 	root :to => "rides#index"
 end

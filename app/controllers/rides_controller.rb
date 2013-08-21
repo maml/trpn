@@ -67,7 +67,7 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
-		@ride = Ride.new(params[:ride])
+		@ride = Ride.new(params[:ride].except(:latitude, :longitude))
 		@ride.user = current_user
 
     respond_to do |format|

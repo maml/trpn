@@ -77,6 +77,8 @@ GEM
     excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    feed_parser (0.3.5)
+      nokogiri
     foreigner (1.4.2)
       activerecord (>= 3.0.0)
     geocoder (1.1.8)
@@ -183,6 +185,7 @@ DEPENDENCIES
   database_cleaner
   debugger
   devise
+  feed_parser
   geocoder
   jquery-rails
   kaminari

@@ -1,0 +1,23 @@
+#! /usr/local/bin/node
+
+var request = require('request');
+var cheerio = require('cheerio');
+var fs = require('fs');
+
+request.get('http://www.craigslist.org/about/sites', function(err, response, body) {
+  if (err) {
+    console.log('some error in GET request', err);
+  }
+  else {
+    var html = cheerio.load(body);
+    var cities = html('.colmask').first().find('li a');
+    var output = [];
+    for (var i = 0; i < cities.length; i++) {
+      var name = cities.eq(i).text();
+      var url = cities.eq(i).attr('href');
+      output.push(name + ": " + url);
+    }
+    output = output.join("\n");
+    fs.writeFileSync("../config/cl_cities.yml", output);
+  }
+});
