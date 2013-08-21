@@ -2,7 +2,7 @@ Given(/^I am a logged in user of the app$/) do
 	email = "user@example.com"
 	password = "p@ssw0rd"
 	
-	User.new(email: email, password: password, password_confirmation: password).save!
+	User.create(email: email, password: password, password_confirmation: password)
 
 	visit "/users/sign_in"
 	fill_in "user_email", with: email
