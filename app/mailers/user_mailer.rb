@@ -4,6 +4,7 @@ require "json"
 class UserMailer
 	
 	class << self
+
 		def launch_welcome_email(user)
 			uri = URI.parse(ENV["EXPRESS_PIGEON_URI"])
 			req = Net::HTTP::Post.new uri.path
@@ -27,11 +28,8 @@ class UserMailer
 			res = Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
 				http.request req
 			end
-
-			puts "!!!\n\n"
-			puts res.body
-			
 		end
+		
 	end
 
 end
