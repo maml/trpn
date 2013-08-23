@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806181602) do
+ActiveRecord::Schema.define(:version => 20130823054548) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -58,13 +58,15 @@ ActiveRecord::Schema.define(:version => 20130806181602) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "request"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
     t.string   "from"
     t.string   "to"
     t.date     "date"
     t.string   "title"
+    t.float    "to_latitude"
+    t.float    "to_longitude"
   end
 
   create_table "subscriptions", :force => true do |t|
