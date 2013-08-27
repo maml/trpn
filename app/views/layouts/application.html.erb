@@ -19,14 +19,14 @@
 				<li>|</li>
 				<li><%= link_to_unless_current "Users", users_path %></li>
 				<li>|</li>
-				<% if user_signed_in? %>
-					<li><%= link_to_unless_current "Edit profile", edit_user_registration_path %></li>
+				<% if current_user %>
+					<li>Logged in as <%= current_user.email %></li>
 					<li>|</li>
-					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<li><%= link_to "Logout", logout_path %>
 				<% else %>
-					<li><%= link_to_unless_current "Sign up", new_user_registration_path %></li>
+					<li><%= link_to_unless_current "Sign up", signup_path %></li>
 					<li>|</li>
-					<li><%= link_to_unless_current "Login", new_user_session_path %></li>
+					<li><%= link_to_unless_current "Login", login_path %></li>
 				<% end %>
 				<li id="new_ride"><%= link_to "[+]", new_ride_path, title: "Create a new ride" %></li>
 			</ul>

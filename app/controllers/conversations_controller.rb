@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
 
-	before_filter :authenticate_user!
+	before_filter :authorize
 
 	def index
 		@conversations = current_user.mailbox.conversations

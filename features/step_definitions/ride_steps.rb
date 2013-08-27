@@ -2,12 +2,13 @@ Given(/^I am a logged in user of the app$/) do
 	email = "user@example.com"
 	password = "p@ssw0rd"
 	
-	User.create(email: email, password: password, password_confirmation: password)
-
-	visit "/users/sign_in"
+	# User is automatically logged in after signup	
+	visit "/signup"
 	fill_in "user_email", with: email
 	fill_in "user_password", with: password
-	click_button "Sign in"
+	fill_in "user_password_confirmation", with: password
+
+	click_button "Sign Up"
 end
 
 And(/^I am on the create a ride page$/) do
@@ -59,15 +60,6 @@ When(/^I am on a users ride page$/) do
 end
 
 And(/^I am on a ride page$/) do
-	ride = Ride.create(
-		request: true,
-		title: "Need a ride to St. Louis this weekend",
-		description: "Heading down for a family reunion",
-		from: "Chicago, IL"
-	)
-
-	ride.user = User.create(email: "donny@who_loved_bowling.com", password: "p@ssw0rd")
-	ride.save!
-
+	ride = Ride.find(:first)
 	visit "/rides/#{ride.id}"
 end

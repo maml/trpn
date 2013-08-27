@@ -6,6 +6,18 @@
 
 require 'cucumber/rails'
 
+# Sets up the Rails environment for Cucumber
+ENV["RAILS_ENV"] = "test"
+require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
+require 'cucumber/rails/world'
+Cucumber::Rails::World.use_transactional_fixtures
+
+# Seed the DB
+ActiveRecord::Fixtures.reset_cache  
+fixtures_folder = File.join(Rails.root, 'test', 'fixtures')
+fixtures = Dir[File.join(fixtures_folder, '*.yml')].map {|f| File.basename(f, '.yml') }
+ActiveRecord::Fixtures.create_fixtures(fixtures_folder, fixtures)
+
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
 # prefer to use XPath just remove this line and adjust any selectors in your

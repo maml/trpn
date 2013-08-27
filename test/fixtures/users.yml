@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  email: 'theDude@gmail.com' 
+  email: 'theDude@gmail.com'
+  password_digest: 'sldkjfskldf'
 
 two:
-  email: 'maude@gmail.com' 
+  email: 'maude@gmail.com'
+  password_digest: 'slkajfd;aks;k' 

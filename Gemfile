@@ -6,10 +6,12 @@ gem 'unicorn'
 gem 'mandrill-api'
 gem 'geocoder'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'devise'
 gem 'kaminari'
 gem 'mailboxer'
 gem 'feed_parser'
+
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

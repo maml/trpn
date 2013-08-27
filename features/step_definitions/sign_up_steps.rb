@@ -1,7 +1,7 @@
 Given(/^I am on the signup page$/) do
-	visit new_user_registration_path
+	visit signup_path
 end
 
 When(/^I log out$/) do
-	visit destroy_user_session_path
+	visit logout_path
 end
