@@ -16,6 +16,8 @@ class Ride < ActiveRecord::Base
 	end
   
   def geocode_to_location
+		return if (self.to.nil? || self.to.empty?)
+		debugger
     results = Geocoder.search(self.to)
     result = results.first
     if result.latitude && result.longitude

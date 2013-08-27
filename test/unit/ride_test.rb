@@ -29,4 +29,18 @@ class RideTest < ActiveSupport::TestCase
 		ride.user = nil
 		assert !ride.save, "Saved a ride without a user"
 	end
+
+	test "it does not attempt to geocode a `to` location if one is not present" do
+		ride = rides(:one)
+		assert_nil ride.to_latitude, "Expected the ride's to_latitude to be nil but received: #{ride.to_latitude} instead."
+		assert_nil ride.to_longitude, "Expected the ride's to_longitude to be nil but received: #{ride.to_longitude} instead."
+	end
+
+	test "it geocodes a `to` location if present" do
+		ride = rides(:one)
+		ride.to = "Chicago, IL"
+		ride.save
+		assert_not_nil ride.to_latitude, "Expected ride's to_latitude not to be nil, but it was."
+		assert_not_nil ride.to_longitude, "Expected ride's to_longitude not to be nil, but it was."
+	end
 end
