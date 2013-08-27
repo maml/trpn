@@ -9,14 +9,16 @@ class Ride < ActiveRecord::Base
 	validates :user_id, :presence => true
 
 	geocoded_by :from
-	after_validation :geocode, :geocode_to_location
+	after_validation :geocode
+	after_validation :geocode_to_location, if: "to_present?"
 
 	def nearby(radius = 35)
 		self.nearbys(radius)
 	end
-  
+
+private
+
   def geocode_to_location
-		return if (self.to.nil? || self.to.empty?)
     results = Geocoder.search(self.to)
     result = results.first
     if result.latitude && result.longitude
@@ -24,4 +26,9 @@ class Ride < ActiveRecord::Base
       self.to_longitude = result.longitude
     end
   end
+
+	def to_present?
+		!(self.to.nil? || self.to.empty?)
+	end
+
 end
