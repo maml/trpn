@@ -44,6 +44,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+				# send welcome email
+        UserMailer.launch_welcome_email(@user)
+				# log in newly created user
 				session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'Thanks for signing up!' }
         format.json { render json: @user, status: :created, location: @user }
