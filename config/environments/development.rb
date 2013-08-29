@@ -41,4 +41,6 @@ Trpn::Application.configure do
 	# Have request logs show up in terminal
 	config.logger = Logger.new(STDOUT)
 	config.logger.level = Logger.const_get('DEBUG')
+
+	config.mailer_uri = "http://localhost:5000"
 end

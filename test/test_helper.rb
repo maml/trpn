@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 	def login_user
 		user = users(:two)
-		session[:user_id] = user.id
+		cookies[:auth_token] = user.auth_token	
 		user
 	end
 		

@@ -4,6 +4,7 @@ require "json"
 class UserMailer
 
 	WELCOME_EMAIL_ID = 10084
+	PASSWORD_RESET_ID = 10648
 	
 	class << self
 
@@ -20,6 +21,31 @@ class UserMailer
 				"subject"  => "Welcome to TRPN",
 				"merge_fields"  => {
 					"first_name"  => "#{user.name}"
+				}
+			}
+
+			req.body = body.to_json
+			req["X-auth-key"] = ENV["EXPRESS_PIGEON_AUTH_KEY"] 
+			req["Content-type"] = "application/json"
+
+			res = Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
+				http.request req
+			end
+		end
+
+		def password_reset(user)
+			uri = URI.parse(ENV["EXPRESS_PIGEON_URI"])
+			req = Net::HTTP::Post.new uri.path
+
+			body = 
+			{
+				"template_id" => UserMailer::PASSWORD_RESET_ID,
+				"reply_to"  => "mloseke@gmail.com",
+				"from"  => "Matt Loseke",
+				"to"  => "mloseke@gmail.com",
+				"subject"  => "Password reset instructions",
+				"merge_fields"  => {
+					"password_reset_url"  => "#{Trpn::Application.config.mailer_uri}#{Rails.application.routes.url_helpers.edit_password_reset_url(user.password_reset_token, :only_path => true)}"
 				}
 			}
 

@@ -3,7 +3,9 @@
 one:
   email: 'theDude@gmail.com'
   password_digest: 'sldkjfskldf'
+  auth_token: 'em9fr3mCRqg75uNfO--Y_Q'
 
 two:
   email: 'maude@gmail.com'
-  password_digest: 'slkajfd;aks;k' 
+  password_digest: 'slkajfd;aks;k'
+  auth_token: 'KNhkg1D5MUwMWy4TsARXXg'

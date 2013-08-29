@@ -3,7 +3,7 @@ require 'test_helper'
 class ConversationsControllerTest < ActionController::TestCase
 
 	setup do
-		login_user  # logins in users(:two)
+		login_user  # users(:two)
 	end
 
 	test "should get index" do

@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 				# log in newly created user
-				session[:user_id] = @user.id
+				cookies[:auth_token] = @user.auth_token
         format.html { redirect_to @user, notice: 'Thanks for signing up!' }
         format.json { render json: @user, status: :created, location: @user }
       else
