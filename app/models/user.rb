@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
 	has_secure_password
 
-	validates_uniqueness_of :email
-	validates :email, :presence 	=> true,
-										:uniqueness => true,
-										# format based on http://davidcel.is/blog/2012/09/06/stop-validating-email-addresses-with-regex/
-										:format   	=> { :with => /.+@.+\..+/i, :message => 'Please enter a valid email address' }
-	validates :password, length: { minimum: 8 }
+	validates :email, 		:presence 	=> true,
+												:uniqueness => true,
+												# format based on http://davidcel.is/blog/2012/09/06/stop-validating-email-addresses-with-regex/
+												:format   	=> { :with => /.+@.+\..+/i, :message => "Please enter a valid email address" }
+	
+	validates :password, 	presence: true,
+												:length 		=> { minimum: 8 }
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation
